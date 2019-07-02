@@ -1,1 +1,6 @@
 .git
+*.pyc
+*.sqlite3
+\.vscode/
+
+orange/orange/__pycache__
