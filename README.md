@@ -1,3 +1,3 @@
 # Orange
 
-A nutrition and dieting app for *everyone*!
+## 橙功之道. The road to nutrition and health.
