@@ -1,0 +1,37 @@
+<title>{% block title %}Orange{% endblock %}</title>
+
+<b>Orange</b>
+
+
+{% if user.is_authenticated %}
+
+    Logged in as {{ user.username }}
+
+    <a href="{% url 'accounts:manage'%}">
+        Manage Account
+    </a>
+    
+    <a href="{% url 'accounts:logout'%}">
+        Logout
+    </a>
+    
+{% else %}
+
+    <a href="{% url 'accounts:login'%}">
+        Log in
+    </a>
+
+    <a href="{% url 'accounts:register'%}">
+        Create account
+    </a>
+
+{% endif %}
+
+
+<div>
+
+{% block content %}
+
+{% endblock %}
+
+</div>

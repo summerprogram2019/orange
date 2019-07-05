@@ -2,5 +2,12 @@
 *.pyc
 *.sqlite3
 \.vscode/
+.DS_Store
 
 orange/orange/__pycache__
+
+orange/home/__pycache__
+orange/home/migrations
+
+orange/accounts/__pycache__
+orange/accounts/migrations
