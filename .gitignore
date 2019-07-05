@@ -11,3 +11,6 @@ orange/home/migrations
 
 orange/accounts/__pycache__
 orange/accounts/migrations
+
+orange/food/__pycache__
+orange/food/migrations
