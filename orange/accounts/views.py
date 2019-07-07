@@ -1,9 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from accounts.forms import SignUpForm
 
 # Create your views here.
 
 def register(request):
-    return render(request, 'accounts/register.html')
+
+    # check if we have a filled in form
+    if request.method == 'POST':
+        form = SignUpForm(request.POST, request.FILES)
+        if form.is_valid():
+            # If forms are valid add data to the database
+            form.save()
+            return redirect('/')
+    else:
+        form = SignUpForm()
+
+    args = {'form': form}
+    return render(request, 'accounts/register.html', args)
 
 def manage(request):
     return render(request, 'accounts/manage.html')

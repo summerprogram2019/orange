@@ -1,5 +1,6 @@
 from django.contrib import admin
-from food.models import Food, Nutrition, AteFood, Profile
+from food.models import Food, Nutrition, Profile
+from accounts.models import AteFood
 
 # Register your models here.
 

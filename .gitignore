@@ -14,3 +14,5 @@ orange/accounts/migrations
 
 orange/food/__pycache__
 orange/food/migrations
+
+static/img/uploaded
