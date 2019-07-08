@@ -1,0 +1,49 @@
+body {
+    --main-color: #F0993C;
+    --link-color: #B3722D;
+    --transparency-color-light: #0000001A;
+    --transparency-color-dark: #0000002B;
+
+}
+
+.navbar-div:last-child {
+    margin-left: auto;
+}
+
+#backbtn {
+    color: white;
+    cursor: hand;
+}
+
+.display-1 {
+    font-weight: 900;
+    font-size: 4em;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.btn-link {
+    color: var(--link-color);
+}
+
+.btn-link:hover {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--transparency-color-light);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--transparency-color-dark);
+}

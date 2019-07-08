@@ -1,18 +1,36 @@
-<title>{% block title %}Orange{% endblock %}</title>
+{% load static %}
 
-<b>Orange</b>
+<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'custom/styles.css' %}">
+
+<title>{% block title %}Orange{% endblock %}</title>
 
 {% if user.is_authenticated %}
 
-    Logged in as {{ user.username }}
+<nav class="navbar sticky-top navbar-light" style="background-color: var(--main-color)">
 
-    <a href="{% url 'accounts:manage'%}">
-        Manage Account
-    </a>
-    
-    <a href="{% url 'accounts:logout'%}">
+    <div class="d-flex" id="navbar-div">
+        {% if request.path != "/" %}
+        <div class="p-2"><a id="backbtn" onclick="window.history.go(-1)" class="btn btn-primary p-2">&#9664;</a></div>
+        {% endif %}
+        <div class="p-2"><a href="{% url 'food:view_all_food' %}" class="btn btn-primary p-2">🍎 Add food</a></div>
+        <div class="p-2"><a class="btn btn-primary p-2">📷</a></div>
+    </div>
+
+    <div class="ml-auto p-2" style="color: white; text-align: right"><a href="{% url 'accounts:logout'%}">
         Logout
-    </a>
+    </a><br>Logged in as {{ user.username }}</div>
+
+    
+</nav>
+
+<nav class="navbar fixed-bottom navbar-light bg-light d-flex justify-content-around">
+        <a class="btn btn-link">🏠<br>Dashboard</a>
+        <a class="btn btn-link">👤<br>Profile</a>
+        <a href="{% url 'food:food_diary' %}" class="btn btn-link">📓<br>Diary</a>
+        <a class="btn btn-link">👩‍⚕️<br>Pros</a>
+        <a class="btn btn-link">⚙️<br>Settings</a>
+</nav>
     
 {% else %}
 
@@ -34,3 +52,8 @@
 {% endblock %}
 
 </div>
+
+<script src="{% static 'bootstrap/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'bootstrap/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+

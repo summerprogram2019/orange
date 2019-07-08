@@ -2,15 +2,29 @@
 
 {% block content %}
 
-Welcome to the website! This is the main page
+<div class="container">
+    <div>
+        <h1 class="display-1" id="dashboard">Dashboard</h1>
 
-<br>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
+    
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
+    
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
+    </div>
+    <div>
+        <h1 class="display-1" id="dashboard">Dashboard</h1>
 
-<a href="{% url 'food:view_all_food' %}">Add food</a>
+        
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
+    </div>
+</div>
 
+{% comment %} 
 {% if user.is_authenticated %}
+    <a href="{% url 'food:view_all_food' %}">View All Foods</a>
     <a href="{% url 'food:food_diary' %}">My Food Diary</a>
-{% endif %}
+{% endif %} {% endcomment %}
 
 
 {% endblock %}
