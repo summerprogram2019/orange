@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Talk-to-pro</title>
+    <style>
+        .head {
+            width: 100%;
+            height: 70px;
+            background-color: orange;
+            overflow: hidden;
+        }
+
+        .head-logo {
+            width: 20%;
+            height: 70px;
+            float: left;
+            /* border: 1px solid black; */
+
+        }
+
+        .head-button {
+            width: 20%;
+            height: 70px;
+            margin-left: 5%;
+            float: left;
+            font-weight: bold;
+            /* border: 1px solid black; */
+
+        }
+
+        .head-logo img {
+            width: 70%;
+            margin-left: 5%;
+            margin-top: 10px;
+        }
+
+        .head-en {
+            width: 35%;
+            float: left;
+            height: 50px;
+            margin-left: 15%;
+            margin-top: 10px;
+            /* border: 1px solid black; */
+        }
+
+        .head-button button {
+            font-family: Tahoma;
+            width: 88px;
+            height: 40px;
+            margin-top: 25px;
+            border-radius: 3px;
+            background-color: orange;
+            color: black;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+            margin-left: 10%
+        }
+
+        .progressbar {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+
+        .progressbar-text {
+            float: left;
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid black; */
+        }
+
+        .progressbar-text p {
+            font-family: Tahoma;
+            text-align: center;
+            line-height: 0px;
+            font-size: 18px;
+            margin: 15px 0px;
+            font-weight: bold;
+        }
+
+        .progressbar1 {
+            float: left;
+            width: 68%;
+            /* margin-left: 2%; */
+            height: 30px;
+            border: 2px solid rgb(224, 184, 110);
+            border-radius: 5px;
+            background-color: rgb(224, 184, 110);
+
+        }
+
+        .progressbar1-1 {
+            width: 50%;
+            height: 30px;
+            background-color: orangered;
+            border-radius: 6px;
+        }
+
+        .progressbar1-1 p {
+            font-family: Tahoma;
+            margin: 0px 0px;
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            line-height: 28px;
+        }
+
+        #cli {
+            background-color: white;
+        }
+
+        .talk-contact {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: 5%;
+        }
+
+        .talk-contact-left {
+            width: 20%;
+            height: auto;
+            /* border: 1px solid black; */
+            float: left;
+
+        }
+
+        .talk-contact-right {
+            margin-left: 8%;
+            width: 65%;
+            height: auto;
+            /* border: 1px solid black; */
+            float: left;
+        }
+
+        .talk-contact-left1 {
+            width: 100%;
+            height: 55px;
+            background-color: rgb(229, 229, 229);
+            margin-top: 2%;
+            border-radius: 10px;
+        }
+
+        .talk-contact-left2 {
+            width: 100%;
+            height: 65px;
+
+            margin-top: 5%;
+            overflow: hidden;
+        }
+
+        .talk-contact-left1 p {
+            font-family: Tahoma;
+            font-size: 20px;
+            line-height: 10px;
+            float: left;
+            margin-left: 5%;
+
+        }
+
+        .talk-contact-left1 img {
+            width: 8%;
+            float: left;
+            margin-left: 20%;
+            margin-top: 6%;
+        }
+
+        #bian {
+            /* font-weight: bold; */
+            color: white;
+            background-color: orange;
+        }
+
+        .apple {
+            width: 66%;
+            height: 100%;
+            background-color: orange;
+            float: left;
+            border-radius: 10px;
+        }
+
+        .apple img {
+            width: 30%;
+            float: left;
+            margin-top: 7%;
+            margin-left: 3%;
+        }
+
+        .apple h5 {
+            font-family: Tahoma;
+            float: left;
+            line-height: 0px;
+            font-size: 20px;
+            color: white;
+            margin-left: 5%;
+
+        }
+
+        .cam {
+            width: 30%;
+            height: 100%;
+            margin-left: 4%;
+            background-color: orange;
+            float: left;
+            border-radius: 10px;
+        }
+
+        .cam img {
+            width: 90%;
+            float: left;
+            margin-top: 7%;
+            margin-left: 3%;
+        }
+
+        .talk-contact-right-up {
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+        }
+
+        .talk-contact-right-down {
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            margin-top: 5%;
+        }
+
+        .talk-contact-right-up h1 {
+            font-family: tahoma;
+            line-height: 3px;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        .talk-contact-right-up-p p {
+            font-family: tahoma;
+            line-height: 40px;
+            font-size: 30px;
+            margin: 0px 0px;
+        }
+
+        .talk-contact-right-up-p2 p {
+            font-family: tahoma;
+            /* line-height: 20px; */
+            font-size: 15px;
+        }
+        .talk-contact-right-down-1{
+            float: left;
+            width: 20%;
+            height: auto;
+            /* border: 1px solid black; */
+        }
+        .talk-contact-right-down-1 img{
+            width: 100%;
+        }
+        .talk-contact-right-down-2{
+            float: left;
+            width: 60%;
+            height: auto;
+            /* border: 1px solid black; */
+        }
+        .talk-contact-right-down-2-p{
+            
+            margin-left: 5%;
+        }
+        .talk-contact-right-down-2-p span{
+            font-family: tahoma;
+            line-height: 45px;
+            font-size: 30px;
+        }
+        #tel{
+            color: orange;
+            font-weight: bold;
+        }
+        .talk-contact-right-down-2-p2{
+          
+            margin-left: 5%;
+        }
+        .talk-contact-right-down-2-p2 p{
+            font-family: tahoma;
+            line-height: 27px;
+            font-size: 22px;
+        }
+        .all{width: 100%;
+        height: 590px;
+        background: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 144, 0,0.1));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="head">
+            <div class="head-logo"><img src="imges/logowhite.png"></div>
+            <div class="head-en">
+                <div class="progressbar">
+                    <div class="progressbar-text">
+                        <p>Energy:</p>
+                    </div>
+                    <div class="progressbar1">
+                        <div class="progressbar1-1">
+                            <p>50%(8786KJ)</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="head-button">
+
+                <button>SETTINGS</button>
+                <button id="cli">Sign out</button>
+
+            </div>
+        </div>
+        <div class="talk-contact">
+            <div class="talk-contact-left">
+                <div class="talk-contact-left1"><span>
+                        <p>My Dashborard</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left1"><span>
+                        <p>My Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left1"><span>
+                        <p>Food diary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left1" id="bian"><span>
+                        <p>Talk to a pro&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left2">
+                    <div class="apple"><span><img src="imges/apple1.png"></span><span>
+                            <h5>Add food</h5>
+                        </span></div>
+                    <div class="cam"><img src="imges/cam1.png"></div>
+                </div>
+            </div>
+            <div class="talk-contact-right">
+                <div class="talk-contact-right-up">
+                    <div>
+                        <h1>Talk to a pro</h1>
+                    </div>
+                    <div class="talk-contact-right-up-p">
+                        <p>Feel unsatisfied with your goals? Do you havespecialised dietary needs that
+                            youmightneedsupport with?</p>
+                    </div>
+                    <div class="talk-contact-right-up-p2">
+                        <p>We can connect you with a personal assistant who can help you with your problems!
+
+                        </p>
+                    </div>
+                </div>
+                <div class="talk-contact-right-down">
+                    <div class="talk-contact-right-down-1"><img src="imges/girl.png"></div>
+                    <div class="talk-contact-right-down-2">
+                        <div class="talk-contact-right-down-2-p"><span>Call Dr. Helen Doogoody on:<br><span id="tel">028234718237</span></span></div>
+                         <div class="talk-contact-right-down-2-p2"><p>She specialises in helping structure dietsfor those with diabetes, such as yourself!</p></div>
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+    </div>
+</body>
+
+</html>

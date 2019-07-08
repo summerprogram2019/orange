@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html,body {
+            width: 100%;
+        }
+        ul li {
+            list-style: none;
+        }
+        i {
+            font-style: normal;
+        }
+        .dateBox {
+            width: calc(100% - 20);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            min-width:550px;
+        }
+        .titleYear {
+            width: 60px;
+            height:40px;
+            background: #000;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .titleMonth {
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .titleMonth i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .titleMonth .monthName {
+            display: inline-block;
+            width: 60%;
+            height: 80px;
+            line-height: 80px;
+            /*overflow: hidden;*/
+        }
+        .monthName span {
+            width: 100%;
+            display: inline-block;
+        }
+        .titleWeek {
+            width: 100%;
+            display: flex;
+        }
+        .titleWeek li {
+            flex: 1;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            border-radius: 4px;
+        }
+        .titleWeek li:first-child {
+            margin-left: 0;
+        }
+        .dayList {
+            width: 100%;
+            overflow: hidden;
+        }
+        .dayList li {
+            width: 13%;
+            float: left;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            background: #fafafa;
+            margin-right: 1.5%;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        .dayList li:nth-of-type(7n) {
+            margin-right: 0;
+        }
+        .dayList .nowDateStyle {
+            background: #4eb900;
+            color: #fff;
+        }
+        .dayList .previousMonthDay,.nextMonthDay {
+            color: #e6e1e1;
+        }
+        .none {
+            display: none;
+        }
+        .yearBox li {
+            width: 32%;
+            float: left;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            background: #fafafa;
+            margin-right: 2%;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        .yearBox li:nth-of-type(3n) {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dateBox">
+        <div class="titleYear">2017</div>
+        <div class="titleMonth">
+            <i class="leftBtn"><</i>
+            <div class="monthName" data-mouthNum='8'>8</div>
+            <i class="rightBtn">></i>
+        </div>
+        <ul class="titleWeek">
+            <li>星期日</li>
+            <li>星期一</li>
+            <li>星期二</li>
+            <li>星期三</li>
+            <li>星期四</li>
+            <li>星期五</li>
+            <li>星期六</li>
+        </ul>
+        <ul class="dayList">
+        </ul>
+    </div>
+    <ul class="yearBox none">
+    </ul>
+</body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+var nowDate = new Date(),
+    nowYear = nowDate.getFullYear(),
+    nowMonth = nowDate.getMonth(),
+    nowDay = nowDate.getDate(),
+    yearMonthDayRun = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], //闰年每个月的总天数
+    yearMonthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],//平年每个月的总天数;
+    NameOfMonth = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+    //年份盒子显示，分别显示当前年份前10年，和后十年
+    var yearList = '';
+    for(var i = 10; i>=0; i--){
+        yearList += `<li class="years">${nowYear - i}</li>`
+    }
+    for(var i = 1; i<= 10; i++){
+        yearList += `<li class="years">${nowYear + i}</li>`
+    }
+    $(".yearBox").html(yearList)
+    //如果是闰年则返回true
+    function runNian(yearNum) {
+        if (yearNum % 4 == 0 && yearNum % 100 != 0 || yearNum % 400 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function dayList(yearStr,monthStr){
+        var spanList = "";
+        var yearNum = Number(yearStr); //转成数字类型
+        var thisYear = new Date().getFullYear();
+        nowYear = yearNum;
+        var monthNum = Number(monthStr) - 1; //js的月份从0开始，也就是0代表一月，1代表二月
+        var firstDayDate = new Date(yearNum, monthNum, 1).getDay(); //获取月份第一天礼拜几
+        var lastDayDate = new Date(yearNum, monthNum+1, 1).getDay() == 0 ? 6 : (new Date(yearNum, monthNum+1, 1).getDay()) - 1; //获取月份最后一天礼拜几
+        var previousMonth = monthNum - 1;
+        //上个月天数计算
+        var previousDaysCount;
+        if(monthNum === 0){
+            previousDaysCount = runNian(yearNum-1) ? yearMonthDayRun[11] : yearMonthDay[11];
+        }else{
+            previousDaysCount = runNian(yearNum) ? yearMonthDayRun[previousMonth] : yearMonthDay[previousMonth];
+        }
+        // var previousDaysCount = runNian(yearNum) ? yearMonthDayRun[previousMonth] : yearMonthDay[previousMonth];
+        //当前月份天数计算
+        var nowDaysCount = runNian(yearNum) ? yearMonthDayRun[monthNum] : yearMonthDay[monthNum];
+
+        //上个月剩几天
+        for(var i = previousDaysCount - firstDayDate + 1; i<= previousDaysCount; i++){
+            spanList += `<li class="previousMonthDay">${i}</li>`
+        }
+        for(var i = 1; i <= nowDaysCount; i++){
+            if(thisYear === nowYear && nowMonth === monthNum && nowDay === i){
+                spanList += `<li class="nowDateStyle">${i}</li>`
+            }else{
+                spanList += `<li>${i}</li>`
+            }
+
+        }
+        if(lastDayDate < 6){
+            for(var i = 0; i< 6-lastDayDate; i++){
+                spanList += `<li class="nextMonthDay">${i+1}</li>`
+            }
+        }
+        $(".dayList").html(spanList);
+        $(".monthName").html(NameOfMonth[monthNum]);
+    }
+    dayList(nowYear, nowMonth + 1);
+    var olunaName = $(".monthName");
+    function changeTheMonthName(numberMonth) {
+        olunaName.attr('data-mouthNum', numberMonth);
+        olunaName.html(NameOfMonth[numberMonth - 1]);
+    }
+    //点击左侧按钮
+        $(".leftBtn").click(function(){
+        var numberMonth = olunaName.attr('data-mouthNum');
+        if(numberMonth > 1){
+            numberMonth --;
+        }
+        dayList(nowYear, numberMonth);
+        changeTheMonthName(numberMonth);
+    })
+    //点击右侧按钮
+    $(".rightBtn").click(function(){
+        var numberMonth = olunaName.attr('data-mouthNum');
+        if(numberMonth < 12){
+            numberMonth ++;
+        }
+
+        dayList(nowYear, numberMonth);
+        changeTheMonthName(numberMonth);
+    })
+//点击年份
+$(".titleYear").click(function(){
+    $(".dateBox").addClass("none");
+    $(".yearBox").removeClass("none");
+})
+$(".yearBox").on('click',".years",function(){
+    var text = $(this).text();
+    $(".titleYear").text(text);
+    $(".dateBox").removeClass("none");
+    $(".yearBox").addClass("none");
+    $(".monthName").attr('data-mouthNum',1)
+    dayList(text,1)
+    $(".monthName").text(NameOfMonth[0]);
+})
+</script>
+</html>

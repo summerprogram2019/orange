@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <style>
+    .head{
+        width: 100%;      
+        height: 70px;
+        background-color:orange;
+        overflow: hidden;
+    }
+    .head-logo{
+        width: 20%;
+        height: 70px;
+        float: left;
+        /* border: 1px solid black; */
+        
+    }
+    .head-button{
+        width: 30%;
+        height: 70px;
+        margin-left: 50%;
+        float: left;
+        font-weight: bold;
+        /* border: 1px solid black; */
+
+    }
+    .head-logo img{
+        width: 70%;
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+    .head-button button{
+        font-family: Tahoma;
+        width: 80px;
+        height: 40px;
+        margin-top: 25px;
+        border-radius: 3px;
+        background-color: orange;
+        color: black;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    .login{
+        width: 50%;
+        height: auto;
+        margin-top: 30px;
+        /* border: 1px solid black; */
+        margin-left: 5%;
+        float: left;
+    }
+    .all{overflow: hidden;}
+    .login-text h3{
+        font-family: Tahoma;
+        margin-left: 5%;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .login-insert{
+        width: 90%;
+        height: 280px;
+        margin-left: 5%;
+        /* border: 1px solid black; */
+    }
+    .login-check{
+        width: 90%;
+        height: 60px;
+        margin-left: 5%;
+        /* border: 1px solid black; */
+        margin-top: 30px;
+       
+    }
+    .login-check button{
+        font-family: Tahoma;
+        width: 30%;
+        height: 40px;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        border: none;
+        background-color: orange;
+        border-radius: 4px;
+        margin-left: 30%;
+        cursor: pointer;
+    }
+    .login-input{
+        /* border: 1px solid black; */
+        overflow: hidden;
+        margin-top: 10px;
+    }
+    .login-input1{
+        float: left;
+        /* border: 1px solid black; */
+    }
+    .login-input1 p{
+        font-family: Tahoma;
+        font-size: 14px;
+        color: black;
+        line-height: 0px;
+        font-weight: bold;
+    }
+    .login-input2{
+        float: left;
+        /* border: 1px solid black; */
+        margin-left: 10%;
+        
+    }
+    .login-input3{
+        float: left;
+        /* border: 1px solid black; */
+    }
+    .login-input3 button{
+        font-family: Tahoma;
+        color: white;
+        width: 100%;
+        background-color: orange;
+        border: none;
+        border-radius: 3px;
+        height: 20px;;
+        margin-left: -35%;
+        cursor: pointer;
+    }
+
+    .login-input2 input{
+        font-family: Tahoma;
+        width: 130%;
+        background-color: gainsboro;
+        border: none;
+        border-radius: 3px;
+        height: 20px;;
+    }
+    #phone-num{
+        width: 80%;
+    }
+    #terms{
+        color: orange;
+    }
+    .login-checkbox input{
+        font-family: Tahoma;
+        border: none;
+        color: greenyellow;
+    }
+    #cli{
+        background-color: white;
+    }
+    .register-pic{
+        float: left;
+        width: 40%;
+        height: auto;
+    }
+    .register-pic img{
+        width: 90%;
+        margin-left: 22.5%;
+        /* margin-top: 5%; */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="head">
+            <div class="head-logo"><img src="imges/logowhite.png"></div>
+            <div class="head-button">
+                <button>ABOUT</button>
+                <button>CONTACT</button>
+                <button id="cli">Login</button>
+               
+            </div>
+        </div>
+        <div class="login">
+            <div class="login-text"><h3>Sign up</h3></div>
+            <div class="login-insert">
+                <div class="login-input"><div class="login-input1"><p>Username</p></div><div class="login-input2"><input ></div></div>
+                <div class="login-input"><div class="login-input1"><p>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div><div class="login-input2"><input ></div></div>
+                <div class="login-input"><div class="login-input1"><p>Phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div><div class="login-input2"><input id="phone-num"></div><div class="login-input3"><button id="phone-code">send code</button></div></div>
+                <div class="login-input"><div class="login-input1"><p>Password&nbsp;</p></div><div class="login-input2"><input ></div></div>
+                <div class="login-input"><div class="login-input1"><p>Repeat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div><div class="login-input2"><input ></div></div>
+                <div class="login-input"><div class="login-input1"><p>Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div><div class="login-input2"><input ></div></div>
+                <div class="login-checkbox"><p><input type="checkbox"   name="category" value="视觉焦点" onclick="my_func()"/><span> I agree to the </span><span id="terms">terms and conditions</span><span>.</span></p></div>
+            </div>
+            <div class="login-check"><button>Sign me up!</button></div>
+          
+        </div>
+        <div class="register-pic"><img src="imges/2.png"></div>
+    </div>
+</body>
+</html>

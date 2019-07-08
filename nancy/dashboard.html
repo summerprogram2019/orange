@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <style>
+        .head {
+            width: 100%;
+            height: 70px;
+            background-color: orange;
+            overflow: hidden;
+        }
+
+        .head-logo {
+            width: 20%;
+            height: 70px;
+            float: left;
+            /* border: 1px solid black; */
+
+        }
+
+        .head-button {
+            width: 20%;
+            height: 70px;
+            margin-left: 5%;
+            float: left;
+            font-weight: bold;
+            /* border: 1px solid black; */
+
+        }
+
+        .head-logo img {
+            width: 70%;
+            margin-left: 5%;
+            margin-top: 10px;
+        }
+
+        .head-en {
+            width: 35%;
+            float: left;
+            height: 50px;
+            margin-left: 15%;
+            margin-top: 10px;
+            /* border: 1px solid black; */
+        }
+
+        .head-button button {
+            font-family: Tahoma;
+            width: 88px;
+            height: 40px;
+            margin-top: 25px;
+            border-radius: 3px;
+            background-color: orange;
+            color: black;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+            margin-left: 10%
+        }
+
+        .progressbar {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+
+        .progressbar-text {
+            float: left;
+            width: 20%;
+            height: 30px;
+            /* border: 1px solid black; */
+        }
+
+        .progressbar-text p {
+            font-family: Tahoma;
+            text-align: center;
+            line-height: 0px;
+            font-size: 18px;
+            margin: 15px 0px;
+            font-weight: bold;
+        }
+
+        .progressbar1 {
+            float: left;
+            width: 68%;
+            /* margin-left: 2%; */
+            height: 30px;
+            border: 2px solid rgb(224, 184, 110);
+            border-radius: 5px;
+            background-color: rgb(224, 184, 110);
+
+        }
+
+        .progressbar1-1 {
+            width: 50%;
+            height: 30px;
+            background-color: orange;
+            border-radius: 6px;
+        }
+
+        .progressbar1-1 p {
+            font-family: Tahoma;
+            margin: 0px 0px;
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            line-height: 28px;
+        }
+
+        #cli {
+            background-color: white;
+        }
+
+        .talk-contact {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: 2%;
+        }
+
+        .talk-contact-left {
+            width: 20%;
+            height: auto;
+            /* border: 1px solid black; */
+            float: left;
+
+        }
+
+        .talk-contact-right {
+            margin-left: 8%;
+            width: 65%;
+            height: 500px;
+            ;
+            /* border: 1px solid black; */
+            float: left;
+            overflow: hidden;
+        }
+
+        .talk-contact-left1 {
+            width: 100%;
+            height: 55px;
+            background-color: rgb(229, 229, 229);
+            margin-top: 2%;
+            border-radius: 10px;
+        }
+
+        .talk-contact-left2 {
+            width: 100%;
+            height: 65px;
+
+            margin-top: 5%;
+            overflow: hidden;
+        }
+
+        .talk-contact-left1 p {
+            font-family: Tahoma;
+            font-size: 20px;
+            line-height: 10px;
+            float: left;
+            margin-left: 5%;
+
+        }
+
+        .talk-contact-left1 img {
+            width: 8%;
+            float: left;
+            margin-left: 20%;
+            margin-top: 6%;
+        }
+
+        #bian {
+            /* font-weight: bold; */
+            color: white;
+            background-color: orange;
+        }
+
+        .apple {
+            width: 66%;
+            height: 100%;
+            background-color: orange;
+            float: left;
+            border-radius: 10px;
+        }
+
+        .apple img {
+            width: 30%;
+            float: left;
+            margin-top: 7%;
+            margin-left: 3%;
+        }
+
+        .apple h5 {
+            font-family: Tahoma;
+            float: left;
+            line-height: 0px;
+            font-size: 20px;
+            color: white;
+            margin-left: 5%;
+
+        }
+
+        .cam {
+            width: 30%;
+            height: 100%;
+            margin-left: 4%;
+            background-color: orange;
+            float: left;
+            border-radius: 10px;
+        }
+
+        .cam img {
+            width: 90%;
+            float: left;
+            margin-top: 7%;
+            margin-left: 3%;
+        }
+
+
+        .all {
+            width: 100%;
+            height: 590px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 144, 0, 0.1));
+        }
+
+        .diary {
+            width: 50%;
+            height: 90px;
+            border: 1px solid black;
+            float: left;
+        }
+
+        .energy-list {
+            margin-left: 8%;
+            width: 40%;
+            height: 500px;
+            /* border: 1px solid black; */
+            float: left;
+            overflow: auto;
+            scrollbar-arrow-color: orange;
+            /*图6,三角箭头的颜色*/
+            scrollbar-face-color: orange;
+            /*图5,立体滚动条的颜色*/
+            scrollbar-3dlight-color: orange;
+            /*图1,立体滚动条亮边的颜
+
+色*/
+            scrollbar-highlight-color: orange;
+            /*图2,滚动条空白部分的
+
+颜色*/
+            scrollbar-shadow-color: orange;
+            /*图3,立体滚动条阴影的颜
+
+色*/
+            scrollbar-darkshadow-color: orange;
+            /*图4,立体滚动条强阴
+
+影的颜色*/
+            scrollbar-track-color: rgb(224, 184, 110);
+            /*图7,立体滚动条背景颜色*/
+
+            scrollbar-base-color: orange;
+            /*滚动条的基本颜色*/
+        }
+
+        .energy-list-title {
+            width: 100%;
+            /* border: 1px solid black; */
+            height: auto;
+            font-family: Tahoma;
+            line-height: 0px;
+        }
+
+        .head-en-x {
+            width: 100%;
+            float: left;
+            height: auto;
+
+            /* margin-top: 2%;; */
+            /* border: 1px solid black; */
+        }
+
+
+
+        .progressbar-x {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+
+        .progressbar-text-x {
+            float: left;
+            width: 25%;
+            height: 30px;
+            /* border: 1px solid black; */
+        }
+
+        .progressbar-text-x p {
+            font-family: Tahoma;
+            text-align: center;
+            line-height: 0px;
+            font-size: 15px;
+            margin: 15px 0px;
+            font-weight: 500;
+        }
+
+        .progressbar1-x {
+            float: left;
+            width: 68%;
+            margin-left: 2%;
+            height: 30px;
+            border: 2px solid gainsboro;
+            border-radius: 12px;
+            background-color: rgb(224, 184, 110);
+
+        }
+
+        .progressbar1-1-x {
+            width: 50%;
+            height: 30px;
+            background-color: orange;
+            border-radius: 12px;
+        }
+
+        .progressbar1-1-x p {
+            font-family: Tahoma;
+            margin: 0px 0px;
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            line-height: 28px;
+        }
+
+        #standard {
+            background-color: rgb(90, 188, 93);
+            width: 90%;
+        }
+
+        #standard2 {
+            background-color: rgb(240, 58, 60);
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="head">
+            <div class="head-logo"><img src="imges/logowhite.png"></div>
+            <div class="head-en">
+                <div class="progressbar">
+                    <div class="progressbar-text">
+                        <p>Energy:</p>
+                    </div>
+                    <div class="progressbar1">
+                        <div class="progressbar1-1">
+                            <p>50%(8786KJ)</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="head-button">
+
+                <button>SETTINGS</button>
+                <button id="cli">Sign out</button>
+
+            </div>
+        </div>
+        <div class="talk-contact">
+            <div class="talk-contact-left">
+                <div class="talk-contact-left1" id="bian"><span>
+                        <p>My Dashborard</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left1"><span>
+                        <p>My Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left1"><span>
+                        <p>Food diary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left1"><span>
+                        <p>Talk to a pro&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </span><span><img src="imges/right.png"></span></div>
+                <div class="talk-contact-left2">
+                    <div class="apple"><span><img src="imges/apple1.png"></span><span>
+                            <h5>Add food</h5>
+                        </span></div>
+                    <div class="cam"><img src="imges/cam1.png"></div>
+                </div>
+            </div>
+            <div class="talk-contact-right">
+                <div class="diary"></div>
+                <div class="energy-list">
+                    <div class="energy-list-title">
+                        <h2>Your Statistic</h2>
+                    </div>
+                    <div class="energy-list-detail">
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Energy</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Vit A</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x" id="standard">
+                                        <p>90%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Sugar</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Carbs.</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x">
+                                        <p>50%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="head-en-x">
+                            <div class="progressbar-x">
+                                <div class="progressbar-text-x">
+                                    <p>Salt</p>
+                                </div>
+                                <div class="progressbar1-x">
+                                    <div class="progressbar1-1-x" id="standard2">
+                                        <p>110%(8786KJ)</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
