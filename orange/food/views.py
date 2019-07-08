@@ -44,3 +44,7 @@ def food_diary(request):
     }
 
     return render(request, 'food/food_diary.html', args)
+
+def professionals(request):
+
+    return render(request, 'food/professionals.html')

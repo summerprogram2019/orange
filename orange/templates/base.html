@@ -28,17 +28,19 @@
         <a href="/" class="btn btn-link">🏠<br>Dashboard</a>
         <a href="{% url 'accounts:view' %}" class="btn btn-link">👤<br>Profile</a>
         <a href="{% url 'food:food_diary' %}" class="btn btn-link">📓<br>Diary</a>
-        <a class="btn btn-link">👩‍⚕️<br>Pros</a>
+        <a href="{% url 'food:professionals' %}" class="btn btn-link">👩‍⚕️<br>Pros</a>
         <a href="{% url 'accounts:manage' %}" class="btn btn-link">⚙️<br>Settings</a>
 </nav>
     
 {% else %}
 
-    <a href="{% url 'accounts:login'%}">
+    <img src="img/logo.png">
+
+    <a href="{% url 'accounts:login'%}" style="background-color: var(--main-color)" class="btn btn-primary">
         Log in
     </a>
 
-    <a href="{% url 'accounts:register'%}">
+    <a href="{% url 'accounts:register'%}" class="btn btn-light">
         Create account
     </a>
 
