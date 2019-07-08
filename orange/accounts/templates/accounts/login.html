@@ -2,8 +2,6 @@
 
 {% block content %}
 
-Log in
-
 <form method="post" action="{% url 'accounts:login' %}">
     {{ form }}
     {% csrf_token %}

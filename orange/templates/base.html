@@ -34,15 +34,37 @@
     
 {% else %}
 
-    <img src="img/logo.png">
+<div class="container">
 
-    <a href="{% url 'accounts:login'%}" style="background-color: var(--main-color)" class="btn btn-primary">
+<a href="/">
+    <img src="{% static "img/default/logo.png" %}" id="mainlogo">
+</a>
+
+{% if request.path == "/" %}
+
+<p class="minitext">
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?
+</p>
+
+<br>
+<div class="d-flex justify-content-center">
+    <a href="{% url 'accounts:login'%}" style="background-color: var(--main-color)" class="btn btn-primary login-btn">
         Log in
     </a>
+</div>
 
-    <a href="{% url 'accounts:register'%}" class="btn btn-light">
+<div class="d-flex justify-content-center">
+    <a href="{% url 'accounts:register'%}" class="btn btn-light login-btn">
         Create account
     </a>
+</div>
+
+{% endif %}
+
+<img class="fixed-bottom" id="startup" src="{% static "img/default/startup.png" %}">
+
+</div>
+    
 
 {% endif %}
 
