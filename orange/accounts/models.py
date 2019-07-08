@@ -22,4 +22,4 @@ class Person(AbstractUser):
 class AteFood(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="person")
     food = models.ForeignKey(Food, on_delete=models.CASCADE, related_name="food")
-    timestamp = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
+    timestamp = models.DateTimeField(auto_now_add=True)

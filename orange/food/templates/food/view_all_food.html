@@ -11,7 +11,12 @@ View all foods
             <th></th>
             <th>Name</th>
             <th>Calories (cal)</th>
-            <th></th>
+
+            <!-- Only give the option of adding a food if they are logged in -->
+            {% if user.is_authenticated %}
+                <th></th>
+            {% endif %}
+
             <th></th>
         </tr>
     </thead>
@@ -27,7 +32,16 @@ View all foods
             <th>{{ food.name }}</th>
             <th>{{ food.nutrients.calories }}</th>
             <th><a href="/food/view_food/{{ food.id }}/">More...</a></th>
-            <th><a href="/food/view_food/{{ food.id }}/">Add</a></th>
+            {% if user.is_authenticated %}
+                <th>
+                    <button id={{ food.id }} class='foodButton' type="submit"
+                        onclick="if (confirm('Add {{ food.name }} to your food diary?')) {
+                                window.location.replace('{% url "food:add_food" food.id %}');
+                            }">
+                        Add
+                    </button>
+                </th>
+            {% endif %}
         </tr>
 
     {% endfor %}
