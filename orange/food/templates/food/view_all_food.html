@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+View all foods
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Calories (cal)</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+                
+    {% for food in foods %}
+
+        <tr>
+            <th>
+                {% if food.picture %}
+                    <img src="/static/img/{{ food.picture.url }}" width="30px">
+                {% endif %}
+            </th>
+            <th>{{ food.name }}</th>
+            <th>{{ food.nutrients.calories }}</th>
+            <th><a href="/food/view_food/{{ food.id }}/">More...</a></th>
+            <th><a href="/food/view_food/{{ food.id }}/">Add</a></th>
+        </tr>
+
+    {% endfor %}
+    
+</table>
+
+{% endblock %}

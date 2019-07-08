@@ -11,6 +11,9 @@ class SignUpForm(UserCreationForm):
             'username',
             'first_name',
             'last_name',
+            'weight',
+            'height',
+            'sex',
             'profile',
             'picture',
         )

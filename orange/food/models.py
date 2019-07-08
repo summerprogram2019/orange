@@ -31,6 +31,7 @@ class Nutrition(models.Model):
 class Food(models.Model):
     name = models.CharField(max_length=40)
     nutrients = models.ForeignKey(Nutrition, on_delete=models.CASCADE, verbose_name="Nutrition")
+    picture = models.ImageField(upload_to="uploaded/food/", null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -39,16 +40,6 @@ class Food(models.Model):
 class Profile(models.Model):
     # name to help user choose profile
     name = models.CharField(max_length=40)
-
-    weight = models.DecimalField(max_digits=5, decimal_places=2) # kg
-    height = models.DecimalField(max_digits=5, decimal_places=2) # cm
-
-    SEX_CHOICES = [
-        ('M', 'Male'),
-        ('F', 'Female')
-    ]
-
-    sex = models.CharField(max_length=6, choices=SEX_CHOICES)
     daily_intake = models.ForeignKey(Nutrition, on_delete=models.CASCADE, verbose_name="Nutrition")
 
     def __str__(self):

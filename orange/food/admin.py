@@ -19,3 +19,4 @@ class ProfileAdmin(admin.ModelAdmin):
 admin.site.register(Food, FoodAdmin)
 admin.site.register(Nutrition, NutritionAdmin)
 admin.site.register(Profile, ProfileAdmin)
+admin.site.register(AteFood, AteFoodAdmin)
