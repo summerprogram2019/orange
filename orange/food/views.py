@@ -4,8 +4,8 @@ from accounts.models import AteFood
 from datetime import datetime
 
 # Create your views here.
-def add_food(request):
-    return render(request, 'food/add_food.html')
+def scan_food(request):
+    return render(request, 'food/scan_food.html')
 
 
 def view_all_food(request):
