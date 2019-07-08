@@ -5,43 +5,43 @@
     100% {
       opacity:1;
     }
-  } 
+} 
   
-  @-moz-keyframes fadeIn {
+@-moz-keyframes fadeIn {
     0% {
       opacity:0;
     }
     100% {
       opacity:1;
     }
-  }
+}
   
-  @-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeIn {
     0% {
       opacity:0;
     }
     100% {
       opacity:1;
     }
-  }
+}
   
-  @-o-keyframes fadeIn {
+@-o-keyframes fadeIn {
     0% {
       opacity:0;
     }
     100% {
       opacity:1;
     }
-  }
+}
   
-  @-ms-keyframes fadeIn {
+@-ms-keyframes fadeIn {
     0% {
       opacity:0;
     }
     100% {
       opacity:1;
     }
-  }
+}
 
 body {
     --main-color: #F0993C;
@@ -72,6 +72,12 @@ body {
 .display-1 {
     font-weight: 900;
     font-size: 4em;
+    letter-spacing: -0.02em;
+}
+
+.display-2 {
+    font-weight: 900;
+    font-size: 2em;
     letter-spacing: -0.02em;
 }
 

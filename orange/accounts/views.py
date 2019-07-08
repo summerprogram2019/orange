@@ -20,3 +20,7 @@ def register(request):
 
 def manage(request):
     return render(request, 'accounts/manage.html')
+
+def view(request):
+    # TODO Add redirect
+    return render(request, 'accounts/view.html')

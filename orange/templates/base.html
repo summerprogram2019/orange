@@ -26,10 +26,10 @@
 
 <nav class="navbar fixed-bottom navbar-light bg-light d-flex justify-content-around">
         <a href="/" class="btn btn-link">🏠<br>Dashboard</a>
-        <a class="btn btn-link">👤<br>Profile</a>
+        <a href="{% url 'accounts:view' %}" class="btn btn-link">👤<br>Profile</a>
         <a href="{% url 'food:food_diary' %}" class="btn btn-link">📓<br>Diary</a>
         <a class="btn btn-link">👩‍⚕️<br>Pros</a>
-        <a class="btn btn-link">⚙️<br>Settings</a>
+        <a href="{% url 'accounts:manage' %}" class="btn btn-link">⚙️<br>Settings</a>
 </nav>
     
 {% else %}
