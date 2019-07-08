@@ -8,4 +8,9 @@ Welcome to the website! This is the main page
 
 <a href="{% url 'food:view_all_food' %}">Add food</a>
 
+{% if user.is_authenticated %}
+    <a href="{% url 'food:food_diary' %}">My Food Diary</a>
+{% endif %}
+
+
 {% endblock %}

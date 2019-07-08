@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from food.models import Food
 from accounts.models import AteFood
+from datetime import datetime
 
 # Create your views here.
 def add_food(request):
@@ -32,3 +33,14 @@ def add_food(request, id):
     atefood.save()
 
     return redirect('/')
+
+def food_diary(request):
+    current_user = request.user
+    today = datetime.now().date()
+
+    args = {
+        'today_atefood' : AteFood.objects.filter(person=current_user, timestamp__gte=today),
+        'yesterday_atefood' : AteFood.objects.filter(person=current_user, timestamp__lt=today)
+    }
+
+    return render(request, 'food/food_diary.html', args)

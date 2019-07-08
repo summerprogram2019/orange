@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tz %}
+
+{% block content %}
+
+Food diary
+<br>
+
+{% if today_atefood %}
+
+    Today:
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Time</th>
+                <th>Calories (cal)</th>
+                <th></th>
+            </tr>
+        </thead>
+        
+        {% for food in today_atefood %}
+
+            <tr>
+                <th>
+                    {% if food.food.picture %}
+                        <img src="/static/img/{{ food.food.picture.url }}" width="30px">
+                    {% endif %}
+                </th>
+                <th>{{ food.food.name }}</th>
+                <th>{{ food.timestamp|localtime }}</th>
+                <th>{{ food.food.nutrients.calories }}</th>
+                <th><a href="/food/view_food/{{ food.food.id }}/">Details...</a></th>
+            </tr>
+
+        {% endfor %}
+    </table>
+
+{% endif %}
+
+{% if yesterday_atefood %}
+
+    Later:
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Time</th>
+                <th>Calories (cal)</th>
+                <th></th>
+            </tr>
+        </thead>
+        
+        {% for food in yesterday_atefood %}
+
+            <tr>
+                <th>
+                    {% if food.food.picture %}
+                        <img src="/static/img/{{ food.food.picture.url }}" width="30px">
+                    {% endif %}
+                </th>
+                <th>{{ food.food.name }}</th>
+                <th>{{ food.timestamp|localtime }}</th>
+                <th>{{ food.food.nutrients.calories }}</th>
+                <th><a href="/food/view_food/{{ food.food.id }}/">Details...</a></th>
+            </tr>
+
+        {% endfor %}
+    </table>
+{% endif %}
+
+<a id = "backButton" href="/">Back</a>
+
+{% endblock %}
