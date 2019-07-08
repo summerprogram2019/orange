@@ -3,12 +3,12 @@
 
 {% block content %}
 
-{{ food.name }}
+<h1 class="display-1">{{ food.name }}</h1>
 
 <br>
 
 {% if food.picture %}
-    <img src="/static/img/{{ food.picture.url }}" width="150px"><br>
+    <img id="foodpicture" src="/static/img/{{ food.picture.url }}" width="150px"><br>
 {% endif %}
 
 calcium: {{ food.nutrients.calcium }}<br>

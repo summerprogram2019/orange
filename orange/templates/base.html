@@ -25,7 +25,7 @@
 </nav>
 
 <nav class="navbar fixed-bottom navbar-light bg-light d-flex justify-content-around">
-        <a class="btn btn-link">🏠<br>Dashboard</a>
+        <a href="/" class="btn btn-link">🏠<br>Dashboard</a>
         <a class="btn btn-link">👤<br>Profile</a>
         <a href="{% url 'food:food_diary' %}" class="btn btn-link">📓<br>Diary</a>
         <a class="btn btn-link">👩‍⚕️<br>Pros</a>
@@ -45,7 +45,7 @@
 {% endif %}
 
 
-<div>
+<div class="container fadeIn">
 
 {% block content %}
 
