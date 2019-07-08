@@ -5,6 +5,16 @@
 
 }
 
+.navbar-div:last-child {
+    margin-left: auto;
+}
+
+.display-1 {
+    font-weight: 900;
+    font-size: 4em;
+    letter-spacing: -0.02em;
+}
+
 .btn-primary {
     background-color: var(--transparency-color-light);
     border: none;
