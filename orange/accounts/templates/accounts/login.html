@@ -17,6 +17,16 @@
 
 <form method="post" action="{% url 'accounts:login' %}">
     <div class="minitext">
+
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+        {% for error in form.errors %}
+          <small id="usernameHelp" class="form-text text-muted">{{ error | escape }}</small>
+        {% endfor %}
+        </div>
+        
+        {% endif %}
+
         <h1 class="display-2">Log in</h1>
         <div class="form-group">
             <label>Username</label>
