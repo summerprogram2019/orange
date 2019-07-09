@@ -14,7 +14,7 @@
         <div class="p-2"><a id="backbtn" onclick="window.history.go(-1)" class="btn btn-primary p-2">&#9664;</a></div>
         {% endif %}
         <div class="p-2"><a href="{% url 'food:view_all_food' %}" class="btn btn-primary p-2">🍎 Add food</a></div>
-        <div class="p-2"><a class="btn btn-primary p-2">📷</a></div>
+        <div class="p-2"><a href="{% url 'food:scan_food' %}" class="btn btn-primary p-2">📷</a></div>
     </div>
 
     <div class="ml-auto p-2" style="color: white; text-align: right"><a href="{% url 'accounts:logout'%}">
