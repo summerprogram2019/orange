@@ -110,6 +110,11 @@ body {
     letter-spacing: -0.02em;
 }
 
+.in-form {
+    font-size: 10em;
+    width: 300px;
+}
+
 a {
     color: var(--link-color);
 }

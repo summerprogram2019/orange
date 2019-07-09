@@ -16,4 +16,5 @@ class SignUpForm(UserCreationForm):
             'sex',
             'profile',
             'picture',
+            'password',
         )
