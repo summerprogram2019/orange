@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'custom/styles.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <title>{% block title %}Orange{% endblock %}</title>
 
@@ -19,17 +20,22 @@
 
     <div class="ml-auto p-2" style="color: white; text-align: right"><a href="{% url 'accounts:logout'%}">
         Logout
-    </a><br>Logged in as {{ user.username }}</div>
+    </a><br>@{{ user.username }}</div>
 
     
 </nav>
 
 <nav class="navbar fixed-bottom navbar-light bg-light d-flex justify-content-around">
-        <a href="/" class="btn btn-link">🏠<br>Dashboard</a>
-        <a href="{% url 'accounts:view' %}" class="btn btn-link">👤<br>Profile</a>
-        <a href="{% url 'food:food_diary' %}" class="btn btn-link">📓<br>Diary</a>
-        <a href="{% url 'food:professionals' %}" class="btn btn-link">👩‍⚕️<br>Pros</a>
-        <a href="{% url 'accounts:manage' %}" class="btn btn-link">⚙️<br>Settings</a>
+        <a href="/" class="btn btn-link">🏠<br>
+        <small id="dashboardText">Dashboard</small></a>
+        <a href="{% url 'accounts:view' %}" class="btn btn-link">👤<br>
+        <small id="profileText">Profile</small></a>
+        <a href="{% url 'food:food_diary' %}" class="btn btn-link">📓<br>
+        <small id="diaryText">Diary</small></a>
+        <a href="{% url 'food:professionals' %}" class="btn btn-link">👩‍⚕️<br>
+        <small id="prosText">Pros</small></a>
+        <a href="{% url 'accounts:manage' %}" class="btn btn-link">⚙️<br>
+        <small id="settingsText">Settings</small></a>
 </nav>
     
 {% else %}
@@ -43,7 +49,7 @@
 {% if request.path == "/" %}
 
 <p class="minitext">
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?
+Orange is all about making healthy eating even easier, providing users with the ability to track the important nutritional information that often gets overlooked. No matter who you are, you can easily achieve a balanced nutrition.
 </p>
 
 <br>

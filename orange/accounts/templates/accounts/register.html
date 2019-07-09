@@ -2,9 +2,14 @@
 {% load common_tags %}
 {% block content %}
 
-
 <form method="post" enctype="multipart/form-data" action="{% url 'accounts:register' %}">
     <div class="minitext">
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+        <small id="usernameHelp" class="form-text text-muted">{{ form.errors }}</small>
+        </div>
+        
+        {% endif %}
         <h1 class="display-2">Create an account</h1>
         <div class="form-group">
             <label>Username</label>
@@ -42,7 +47,7 @@
         <div class="form-group">
             <label>Password</label>
             <input class="form-control" type="password" name="password1" required="" id="id_password1">
-            <small id="usernameHelp" class="form-text text-muted">
+            <small class="form-text text-muted">
                 <ul>
                     <li>Your password can't be too similar to your other personal information.</li>
                     <li>Your password must contain at least 8 characters.</li>
@@ -54,7 +59,7 @@
         <div class="form-group">
             <label>Password confirmation</label>
             <input class="form-control" type="password" name="password2" required="" id="id_password2">
-            <small id="usernameHelp" class="form-text text-muted">
+            <small class="form-text text-muted">
                 Enter the same password as before, for verification.
             </small>
         </div>
