@@ -37,6 +37,9 @@ def index(request):
         daily_intake_names = [' '.join([y.capitalize() for y in x.replace("_", " ").split(" ")])
                 for x in daily_intake_names]
 
+        daily_intake_values = [str(round(x, 0)) for x in daily_intake_values]
+        today_vitamins = [str(round(x, 0)) for x in today_vitamins]
+
         args = {
             'intakes' : zip(daily_intake_names, daily_intake_values, today_vitamins, percent)
         }
