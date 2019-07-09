@@ -21,7 +21,7 @@
         {% if form.errors %}
         <div class="alert alert-danger" role="alert">
         {% for error in form.errors %}
-          <small id="usernameHelp" class="form-text text-muted">{{ error | escape }}</small>
+          <small id="usernameHelp" class="form-text text-muted">{{ error }}</small>
         {% endfor %}
         </div>
         
@@ -41,6 +41,10 @@
         <button type="submit" class="login-btn btn btn-primary" style="background-color: var(--main-color)" value="login">
             Log in
         </button>
+        <br>
+        {% if request.path != "/" %}
+        <a id="backbtn" onclick="window.history.go(-1)" class="btn btn-light login-btn" style="color: black">Back</a>
+        {% endif %}
     </div>
 </form>
 

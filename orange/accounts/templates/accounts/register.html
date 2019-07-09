@@ -70,6 +70,10 @@
         <button type="submit" class="login-btn btn btn-primary" style="background-color: var(--main-color)" value="Create account">
             Sign up
         </button>
+
+        {% if request.path != "/" %}
+        <a id="backbtn" onclick="window.history.go(-1)" class="btn btn-light login-btn" style="color: black">Back</a>
+        {% endif %}
     </div>
 </form>
 
