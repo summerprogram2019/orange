@@ -25,8 +25,8 @@ SECRET_KEY = 'h3uo)$)s+rq3@a!y2=@!jv(#c&lzp!v&^he@tb#9nny(a++et='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# for hosting
+ALLOWED_HOSTS = [] if os.environ.get('IP_ADDR') is None else [os.environ['IP_ADDR']]
 
 # Application definition
 
