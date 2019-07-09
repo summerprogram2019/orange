@@ -22,5 +22,11 @@ def manage(request):
     return render(request, 'accounts/manage.html')
 
 def view(request):
-    # TODO Add redirect
-    return render(request, 'accounts/view.html')
+    current_user = request.user
+
+    if current_user.is_authenticated:
+        return render(request, 'accounts/view.html')    
+    
+    else:
+        return redirect('/')
+        
