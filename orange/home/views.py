@@ -13,6 +13,7 @@ def index(request):
         daily_intake_names = [x.name for x in current_user.profile.daily_intake._meta.fields
                 if x.name != 'id']
 
+
         daily_intake_values = [current_user.profile.daily_intake.__getattribute__(x)
                 for x in daily_intake_names if x != 'id']
 
@@ -32,6 +33,9 @@ def index(request):
 
             today_vitamins.append(total_vitamin_today)
             percent.append(int(100*total_vitamin_today/daily_intake))
+
+        daily_intake_names = [' '.join([y.capitalize() for y in x.replace("_", " ").split(" ")])
+                for x in daily_intake_names]
 
         args = {
             'intakes' : zip(daily_intake_names, daily_intake_values, today_vitamins, percent)
