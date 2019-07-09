@@ -34,8 +34,8 @@
         <small id="diaryText">Diary</small></a>
         <a href="{% url 'food:professionals' %}" class="btn btn-link">👩‍⚕️<br>
         <small id="prosText">Pros</small></a>
-        <a href="{% url 'accounts:manage' %}" class="btn btn-link">⚙️<br>
-        <small id="settingsText">Settings</small></a>
+        {% comment %} <a href="{% url 'accounts:manage' %}" class="btn btn-link">⚙️<br>
+        <small id="settingsText">Settings</small></a> {% endcomment %}
 </nav>
     
 {% else %}
