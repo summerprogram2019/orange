@@ -70,6 +70,13 @@ body {
     width: 200px;
 }
 
+#user {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #mainlogo {
     width: 300px;
     display: block;
