@@ -16,8 +16,11 @@
         
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
     </div>
-    Your Statistics
-    <br>
+
+    {% if daily_intake_names %}
+        Your Statistics
+        <br>
+    {% endif %}
 
     {% for daily_intake_names, daily_intake_values, today_vitamins, percent in intakes %}
 

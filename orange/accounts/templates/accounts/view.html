@@ -4,5 +4,8 @@
 
 <h1 class="display-1">{{ user.first_name }} {{ user.last_name }}</h1>
 <h1 class="display-2">@{{ user.username }}</h1>
-<img src="/static/img/{{ user.picture.url }}" width="200px">
+
+{% if user.picture %}
+    <img src="/static/img/{{ user.picture.url }}" width="200px">
+{% endif %}
 {% endblock %}

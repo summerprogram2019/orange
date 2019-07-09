@@ -8,7 +8,7 @@ def index(request):
     current_user = request.user
     today = datetime.now().date()
 
-    if current_user.is_authenticated:
+    if current_user.is_authenticated and current_user.profile is not None:
 
         daily_intake_names = [x.name for x in current_user.profile.daily_intake._meta.fields
                 if x.name != 'id']
