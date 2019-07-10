@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from accounts.models import AteFood
 from datetime import datetime
+from food.api import lookup, reverse_lookup
 
 # Create your views here.
 
@@ -29,10 +30,14 @@ def index(request):
 
             # calculate amount eaten today
             for i in today_food:
-                total_vitamin_today += i.food.nutrients.__getattribute__(vitamin)
+                if i.food.nutrients.__getattribute__(vitamin) is not None:
+                    total_vitamin_today += i.food.nutrients.__getattribute__(vitamin)
 
             today_vitamins.append(total_vitamin_today)
             percent.append(int(100*total_vitamin_today/daily_intake))
+
+        # convert units to strings
+        units = ['{:~}'.format(lookup[reverse_lookup[x]][1]) for x in daily_intake_names]
 
         daily_intake_names = [' '.join([y.capitalize() for y in x.replace("_", " ").split(" ")])
                 for x in daily_intake_names]
@@ -42,7 +47,7 @@ def index(request):
 
         args = {
             'intakes' : sorted(zip(daily_intake_names,
-                    daily_intake_values, today_vitamins, percent))
+                    daily_intake_values, today_vitamins, percent, units))
         }
 
     else:

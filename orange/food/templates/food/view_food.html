@@ -21,26 +21,13 @@
     <br>
 {% endif %}
 
-calcium: {{ food.nutrients.calcium }}<br>
-calories: {{ food.nutrients.calories }}<br>
-fat: {{ food.nutrients.fat }}<br>
-sat_fat: {{ food.nutrients.sat_fat }}<br>
-sodium: {{ food.nutrients.sodium }}<br>
-carbs: {{ food.nutrients.carbs }}<br>
-fibre: {{ food.nutrients.fibre }}<br>
-protein: {{ food.nutrients.protein }}<br>
-vitamin_a: {{ food.nutrients.vitamin_a }}<br>
-vitamin_b12: {{ food.nutrients.vitamin_b12 }}<br>
-vitamin_b6: {{ food.nutrients.vitamin_b6 }}<br>
-vitamin_c: {{ food.nutrients.vitamin_c }}<br>
-vitamin_d: {{ food.nutrients.vitamin_d }}<br>
-vitamin_e: {{ food.nutrients.vitamin_e }}<br>
-niacin: {{ food.nutrients.niacin }}<br>
-thiamin: {{ food.nutrients.thiamin }}<br>
-phosphorus: {{ food.nutrients.phosphorus }}<br>
-zinc: {{ food.nutrients.zinc }}<br>
-magnesium: {{ food.nutrients.magnesium }}<br>
-folate: {{ food.nutrients.folate }}<br>
-riboflavin: {{ food.nutrients.riboflavin }}<br>
+{% for daily_intake_names, daily_intake_values, units in data %}
+
+    {{ daily_intake_names }}
+    {{ daily_intake_values }}
+    {{ units }}
+    <br>
+
+{% endfor %}
 
 {% endblock %}

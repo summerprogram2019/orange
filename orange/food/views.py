@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from food.models import Food
+from food.models import Food, Nutrition
 from accounts.models import AteFood
 from datetime import datetime
-from food.api import get_nutrients
+from food.api import get_nutrients, lookup, reverse_lookup
+from decimal import *
 
 # Create your views here.
 def scan_food(request):
@@ -19,9 +20,23 @@ def view_all_food(request):
 
 
 def view_food(request, id):
+    food = Food.objects.get(pk=id)
+
+    # get name, value and units for this food
+    daily_intake_names = [x.name for x in food.nutrients._meta.fields
+            if x.name != 'id']
+
+    daily_intake_values = [food.nutrients.__getattribute__(x)
+            for x in daily_intake_names if x != 'id']
+
+    units = ['{:~}'.format(lookup[reverse_lookup[x]][1]) for x in daily_intake_names]
+
+    daily_intake_names = [' '.join([y.capitalize() for y in x.replace("_", " ").split(" ")])
+            for x in daily_intake_names]
 
     args = {
-        'food' : Food.objects.get(pk=id)
+        'food' : food,
+        'data' : zip(daily_intake_names, daily_intake_values, units)
     }
 
     return render(request, 'food/view_food.html', args)
@@ -52,8 +67,6 @@ def professionals(request):
 
 def search_food(request, foodname):
 
-    print(foodname)
-
     food_object = None
 
     # first check if this food already exists
@@ -67,6 +80,7 @@ def search_food(request, foodname):
         return redirect(f'/food/view_food/{food_object.id}')
 
     # food doesn't exist
+    # attempt to get from wolfram alpha api
     nutrients = get_nutrients(foodname)
     
     if nutrients is None:
@@ -74,9 +88,21 @@ def search_food(request, foodname):
         print('bad')
 
     else:
-        # TODO add to database
+        # convert the resulting units according to the lookup table
+        converted = {}
 
-        # validate units
+        # convert to units
+        for name, quantity in nutrients.items():
+            # convert unit and save
+            converted[name] = quantity.to(lookup[reverse_lookup[name]][1]).m
 
+        # create new nutrient
+        nutrient = Nutrition(**converted)
+        nutrient.save()
 
-        print(nutrients)
+        # create new food in database
+        food = Food(nutrients=nutrient, name=foodname)
+        food.save()
+
+        # go to new page
+        return redirect(f'/food/view_food/{food.id}')
