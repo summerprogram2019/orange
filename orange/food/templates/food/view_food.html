@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h1 class="display-2">{{ food.name }}</h1>
+<h1 class="display-2">Details of {{ food.name }}</h1>
 
 <br>
 
@@ -12,7 +12,7 @@
 {% endif %}
 
 {% if user.is_authenticated %}
-    <button id={{ food.id }} class='foodButton' type="submit"
+    <button id="{{ food.id }}" class='btn btn-primary btn-orange' type="submit"
         onclick="if (confirm('Add {{ food.name }} to your food diary?')) {
                 window.location.replace('{% url "food:add_food" food.id %}');
             }">
@@ -21,13 +21,14 @@
     <br>
 {% endif %}
 
+<table style="width: 100%;" cellpadding=5>
 {% for daily_intake_names, daily_intake_values, units in data %}
-
-    {{ daily_intake_names }}
-    {{ daily_intake_values }}
-    {{ units }}
-    <br>
-
+    <tr>    
+        <td style="width: 50%; display: block;">{{ daily_intake_names }}</td>
+        <td style="width: 40%; display: block; text-align: right; font-weight: bold;">{{ daily_intake_values }}</td>
+        <td style="width: 10%; display: block;">{{ units }}</td>
+    </tr>
 {% endfor %}
+</table>
 
 {% endblock %}
