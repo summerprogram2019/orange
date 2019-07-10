@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Talk-to-pro</title>
+    <title>FoodDiary</title>
     <style>
+        ul {
+            list-style: none;
+            margin: 0px;
+        }
+
         .head {
             width: 100%;
             height: 70px;
@@ -100,7 +105,7 @@
         .progressbar1-1 {
             width: 50%;
             height: 30px;
-            background-color: orangered;
+            background-color: orange;
             border-radius: 6px;
         }
 
@@ -121,7 +126,7 @@
             width: 100%;
             height: auto;
             overflow: hidden;
-            margin-top: 5%;
+            margin-top: 2%;
         }
 
         .talk-contact-left {
@@ -219,79 +224,109 @@
             margin-left: 3%;
         }
 
-        .talk-contact-right-up {
+
+        .all {
             width: 100%;
-            height: auto;
-            /* border: 1px solid black; */
+            height: 590px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 144, 0, 0.1));
         }
 
-        .talk-contact-right-down {
-            overflow: hidden;
-            width: 100%;
-            height: auto;
-            /* border: 1px solid black; */
-            margin-top: 5%;
-        }
-
-        .talk-contact-right-up h1 {
-            font-family: tahoma;
-            line-height: 3px;
-            font-weight: bold;
+        .fooddiary-title h1 {
+            line-height: 0px;
+            font-family: Tahoma;
             font-size: 40px;
+
         }
 
-        .talk-contact-right-up-p p {
-            font-family: tahoma;
-            line-height: 40px;
-            font-size: 30px;
-            margin: 0px 0px;
-        }
-
-        .talk-contact-right-up-p2 p {
-            font-family: tahoma;
-            /* line-height: 20px; */
-            font-size: 15px;
-        }
-        .talk-contact-right-down-1{
-            float: left;
-            width: 20%;
-            height: auto;
-            /* border: 1px solid black; */
-        }
-        .talk-contact-right-down-1 img{
+        .fooddiary-content {
             width: 100%;
-        }
-        .talk-contact-right-down-2{
-            float: left;
-            width: 60%;
-            height: auto;
+            height: 430px;
             /* border: 1px solid black; */
         }
-        .talk-contact-right-down-2-p{
-            
+
+        .fooddiary-content-title {
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            margin-top: 2%;
+        }
+
+        .fooddiary-content-title span {
+            margin-left: 12%;
+            font-weight: bold;
+        }
+
+        #name {
+            margin-left: 33%;
+        }
+
+        .fooddiary-content-content {
+            width: 100%;
+            height: 360px;
+            /* border: 1px solid black; */
+            margin-top: 2%;
+            overflow: hidden;
+        }
+
+        .fooddiary-content-content-1 ul {
+            width: 100%;
+            height: 50px;
+            /* border: 1px solid black; */
+        }
+
+
+        .fooddiary-content-content-1 li {
+            width: 20%;
+            list-style: none;
+            float: left;
+            height: 30px;
+            ;
+        }
+
+        #food-img {
+            width: 5%;
+            margin-left: 2%;
+        }
+
+        #food-name {
+            width: 30%;
             margin-left: 5%;
         }
-        .talk-contact-right-down-2-p span{
-            font-family: tahoma;
-            line-height: 45px;
-            font-size: 30px;
+
+        #food-time {
+            width: 15%;
+            margin-left: 4%;
         }
-        #tel{
+
+        #food-energy {
+            width: 13%;
+            margin-left: 4%;
+        }
+
+        #food-more {
+            width: 5%;
+            margin-left: 5%;
             color: orange;
             font-weight: bold;
         }
-        .talk-contact-right-down-2-p2{
-          
-            margin-left: 5%;
+
+
+
+        .fooddiary-content-content-1 li>p {
+            line-height: 20px;
+            font-family: Tahoma;
+            font-size: 16px;
         }
-        .talk-contact-right-down-2-p2 p{
-            font-family: tahoma;
-            line-height: 27px;
-            font-size: 22px;
+
+        .fooddiary-content-content-1 li>img {
+            width: 100%;
         }
-        .all{width: 100%;
-        height: 590px;
-        background: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 144, 0,0.1));
+
+        .hua {
+            overflow: auto;
+            width: 100%;
+            height: 360px;
+
         }
     </style>
 </head>
@@ -342,31 +377,269 @@
                 </div>
             </div>
             <div class="talk-contact-right">
-                <div class="talk-contact-right-up">
-                    <div>
-                        <h1>Talk to a pro</h1>
+                <div class="fooddiary-title">
+                    <h1>Food Diary</h1>
+                </div>
+                <div class="fooddiary-content">
+                    <div class="fooddiary-content-title">
+                        <span>Name</span><span id="name">Time</span><span>Energy</span>
                     </div>
-                    <div class="talk-contact-right-up-p">
-                        <p>Feel unsatisfied with your goals? Do you havespecialised dietary needs that
-                            youmightneedsupport with?</p>
-                    </div>
-                    <div class="talk-contact-right-up-p2">
-                        <p>We can connect you with a personal assistant who can help you with your problems!
+                    <div class="hua">
+                        <div class="fooddiary-content-content">
 
-                        </p>
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fooddiary-content-content-1">
+                                <ul>
+                                    <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                    <li id="food-name">
+                                        <p>Red Apple</p>
+                                    </li>
+                                    <li id="food-time">
+                                        <p>4/7 8:00am</p>
+                                    </li>
+                                    <li id="food-energy">
+                                        <p>1000KJ</p>
+                                    </li>
+                                    <li id="food-more">
+                                        <p>More…</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
-                <div class="talk-contact-right-down">
-                    <div class="talk-contact-right-down-1"><img src="imges/girl.png"></div>
-                    <div class="talk-contact-right-down-2">
-                        <div class="talk-contact-right-down-2-p"><span>Call Dr. Helen Doogoody on:<br><span id="tel">028234718237</span></span></div>
-                         <div class="talk-contact-right-down-2-p2"><p>She specialises in helping structure dietsfor those with diabetes, such as yourself!</p></div>
-                    </div>
-                </div>
-            </div> 
-
-        </div>
-    </div>
 </body>
 
 </html>

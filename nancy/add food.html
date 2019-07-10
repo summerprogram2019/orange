@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>add food</title>
     <style>
-        ul{list-style: none;}
+        ul {
+            list-style: none;
+        }
+
         .head {
             width: 100%;
             height: 70px;
@@ -137,7 +140,7 @@
             margin-left: 8%;
             width: 65%;
             height: auto;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             float: left;
         }
 
@@ -220,85 +223,98 @@
             margin-left: 3%;
         }
 
-      
-        .all{width: 100%;
-        height: 590px;
-        background: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 144, 0,0.1));
+
+        .all {
+            width: 100%;
+            height: 590px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 144, 0, 0.1));
         }
-        .addfood{
-            
+
+        .addfood {
+
             width: 100%;
             height: 60px;
             /* border: 1px solid black; */
             overflow: hidden;
         }
-        .addfood-up1{
+
+        .addfood-up1 {
             float: left;
             width: 30%;
             height: 60px;
             /* border: 1px solid black; */
-            
+
         }
-        .addfood-up2{
+
+        .addfood-up2 {
             margin-left: 15%;
             float: left;
             width: 50%;
             height: 60px;
             /* border: 1px solid black; */
-            
+
         }
-        .addfood-up1 h1{
+
+        .addfood-up1 h1 {
             font-family: Tahoma;
             line-height: 0px;
             font-size: 40px;
         }
-        .addfood-up2-include{
+
+        .addfood-up2-include {
             width: 100%;
             height: 60px;
             background-color: orange;
             border-radius: 12px;
             overflow: hidden;
         }
-        .addfood-up2-include img{
+
+        .addfood-up2-include img {
             float: left;
             width: 20%;
             float: left;
             margin-top: -2%;
             margin-left: 3%;
         }
-        .addfood-up2-include2{
+
+        .addfood-up2-include2 {
             width: 70%;
             height: 60px;
             /* border: 1px solid black; */
             float: left;
         }
-        .addfood-up2-include2 p{
+
+        .addfood-up2-include2 p {
             font-family: Tahoma;
             color: white;
             font-weight: bold;
             font-size: 20px;
             text-align: center;
         }
-        .addfood-up2-include :hover{
+
+        .addfood-up2-include :hover {
             cursor: pointer;
         }
-        .foodsearch{
+
+        .foodsearch {
             width: 100%;
             height: auto;
             /* border: 1px solid black; */
             overflow: hidden;
-           margin-top: 1%;
-           margin-left: 2%;
+            margin-top: 1%;
+            margin-left: 2%;
         }
-        .foodsearch1{
+
+        .foodsearch1 {
             width: 29%;
             height: 35px;
             /* border: 1px solid black; */
             float: left;
-            
+
 
         }
-        .foodsearch2{
+
+        .foodsearch2 {
             width: 45%;
             height: 35px;
             /* border: 1px solid black; */
@@ -306,63 +322,257 @@
             margin-left: 2%;
 
         }
-        .foodsearch3{
+
+        .foodsearch3 {
             width: 15%;
             height: 35px;
             /* border: 1px solid black; */
             float: left;
             margin-left: 2%;
         }
-        .foodsearch2  input{
-        font-family: Tahoma;
-        width: 100%;
-        background-color: gainsboro;
-        border: none;
-        border-radius: 8px;
-        height: 20px;;
-        margin-top: 3%;
-    }
-    .foodsearch1  p{
-        font-family: Tahoma;
-       font-size: 18px;
-       line-height: 12px;
-    
-    }
-    .foodsearch3 img{
-        width: 20%;
-        float: left;
-    }
-    .foodsearch3 p{
-        /* width: 20%; */
-        float: left;
-        font-size: 17px;
-        color: white;
-        margin-left: 8%;
-        margin: 0px 0px;
-    }
-    .foodsearch3 button{
-        font-family: Tahoma;
-        color: white;
-        background-color: orange;
-        border: none;
-        border-radius: 8px;
-        height: 30px;;
-         overflow: hidden;
-         margin-top: 4%;
-    }
-    .foodsearch3 button:hover{
-        cursor: pointer;
-        background-color: rgba(224, 184, 110,0.5);
-    }
-    .fooddetail{
-        width: 100%;
-        height: 300px;
-        border: 1px solid black;
-        margin-top: 2%;
-    }
-    #foodname{
-        width: 50%;
-    }
+
+        .foodsearch2 input {
+            font-family: Tahoma;
+            width: 100%;
+            background-color: gainsboro;
+            border: none;
+            border-radius: 8px;
+            height: 20px;
+            ;
+            margin-top: 3%;
+        }
+
+        .foodsearch1 p {
+            font-family: Tahoma;
+            font-size: 18px;
+            line-height: 12px;
+
+        }
+
+        .foodsearch3 img {
+            width: 20%;
+            float: left;
+        }
+
+        .foodsearch3 p {
+             font-family: Tahoma;
+            /* width: 20%; */
+            float: left;
+            font-size: 17px;
+            color: white;
+            margin-left: 8%;
+            margin: 0px 0px;
+        }
+
+        .foodsearch3 button {
+            font-family: Tahoma;
+            color: white;
+            background-color: orange;
+            border: none;
+            border-radius: 8px;
+            height: 30px;
+            ;
+            overflow: hidden;
+            margin-top: 4%;
+        }
+
+        .foodsearch3 button:hover {
+            cursor: pointer;
+            background-color: rgba(224, 184, 110, 0.5);
+        }
+
+        .fooddetail {
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            margin-top: 2%;
+        }
+
+        #foodname {
+            width: 50%;
+        }
+
+        .fooddetail1 {
+            width: 100%;
+            height: 350px;
+            /* border: 1px solid black; */
+        }
+
+        .fooddiary-content-title {
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            margin-top: 2%;
+        }
+
+        .fooddiary-content-title span {
+            font-family: Tahoma;
+            margin-left: 12%;
+            font-weight: bold;
+        }
+
+        #name {
+            margin-left: 33%;
+        }
+
+        .fooddiary-content-content {
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            margin-top: 2%;
+            overflow: hidden;
+        }
+
+        .fooddiary-content-content-1 ul {
+            font-family: Tahoma;
+            width: 100%;
+            height: 50px;
+            /* border: 1px solid black; */
+        }
+
+
+        .fooddiary-content-content-1 li {
+            width: 20%;
+            list-style: none;
+            float: left;
+            height: 30px;
+            ;
+        }
+
+        #food-img {
+            width: 5%;
+            margin-left: 2%;
+        }
+        #food-img:hover{
+            cursor: pointer;
+        }
+
+        #food-name {
+            width: 30%;
+            margin-left: 5%;
+        }
+
+        #en {
+            margin-left: 42%;
+        }
+
+        #food-energy {
+            width: 13%;
+            margin-left: 14%;
+        }
+
+        #food-more {
+            width: 5%;
+            margin-left: 15%;
+            color: orange;
+            font-weight: bold;
+        }
+
+
+
+        .fooddiary-content-content-1 li>p {
+            line-height: 20px;
+            font-family: Tahoma;
+            font-size: 16px;
+        }
+
+        .fooddiary-content-content-1 li>img {
+            width: 100%;
+        }
+
+        .hua {
+            overflow: auto;
+            width: 100%;
+            height: 400px;
+
+        }
+        .bj {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 3000;
+            display: none;
+        }
+
+        .bx {
+            width: 40%;
+            left: 30%;
+            top: 150px;
+            height: 200px;
+            background-color: #fff;
+            position: fixed;
+            z-index: 3100;
+            display: none;
+        }
+        .pop-text{
+            width: 60%;
+            height: auto;
+            margin-top: 5%;
+            /* border: 1px solid black; */
+            margin-left: 20%;
+        }
+        .pop-text span{
+            font-family: Tahoma;
+            font-size: 25px;
+            line-height: 35px;
+            
+        }
+        #addfood{
+            color: orange;
+            font-weight: bold;
+        }
+        .pop-button{
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+        .pop-button1{
+            width: 40%;
+            height: 50px;
+            /* border: 1px solid black; */
+            float: left;
+            margin-top: 5%;
+            margin-left: 5%
+            
+        }
+
+        .pop-button2{
+            width: 40%;
+            height: 50px;
+            /* border: 1px solid black; */
+            float: left;
+            margin-left: 10%;
+            margin-top: 5%;
+            
+        }
+        .pop-button1 button{
+            width: 100%;
+            height: 40px;
+            border: none;
+            background-color: orange;
+            color: white;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Tahoma;
+        }
+        .pop-button2 button{
+            width: 100%;
+            height: 40px;
+            border: none;
+            background-color: gainsboro;
+            color: black;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Tahoma;
+        }
+
+
     </style>
 </head>
 
@@ -412,25 +622,270 @@
                 </div>
             </div>
             <div class="talk-contact-right">
-             <div class="addfood">
-                 <div class="addfood-up1"><h1>Add food</h1></div>
-                 <div class="addfood-up2"><div class="addfood-up2-include">
-                     <img src="imges/cam1.png"><div class="addfood-up2-include2"><p>Add food automatically</p></div>
-                 </div></div>
-             </div>
-             <div class="foodsearch">
-                 <div class="foodsearch1"><p>Type the name of your food:</p></div>
-                 <div class="foodsearch2"><input></div>
-                 <div class="foodsearch3"><button>&nbsp;&nbsp;<img src="imges/search.png"><p> &nbsp;&nbsp;Search</p></button></div>
-             </div>
-             <div class="fooddetail">
-                 <div class="fooddetail1"></div>
-                
-             </div>
-            </div> 
+                <div class="addfood">
+                    <div class="addfood-up1">
+                        <h1>Add food</h1>
+                    </div>
+                    <div class="addfood-up2">
+                        <div class="addfood-up2-include">
+                            <img src="imges/cam1.png">
+                            <div class="addfood-up2-include2">
+                                <p>Add food automatically</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="foodsearch">
+                    <div class="foodsearch1">
+                        <p>Type the name of your food:</p>
+                    </div>
+                    <div class="foodsearch2"><input></div>
+                    <div class="foodsearch3"><button>&nbsp;&nbsp;<img src="imges/search.png">
+                            <p> &nbsp;&nbsp;Search</p>
+                        </button></div>
+                </div>
+                <div class="fooddetail">
+                    <div class="fooddetail1">
+                        <div class="fooddiary-content-title">
+                            <span>Name</span> <span id="en">Energy</span>
+                        </div>
+                        <div class="hua">
+                            <div class="fooddiary-content-content">
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>Red Apple</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="fooddiary-content-content-1">
+                                    <ul>
+                                        <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                        <li id="food-name">
+                                            <p>ddddddddddddddddddddddd</p>
+                                        </li>
+
+                                        <li id="food-energy">
+                                            <p>1000KJ</p>
+                                        </li>
+                                        <li id="food-more">
+                                            <p>More…</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="fooddiary-content-content-1">
+                                        <ul>
+                                            <li id="food-img"><img src="imges/apple1 (1).png"></li>
+                                            <li id="food-name">
+                                                <p>ddddddddddddddddddddddd</p>
+                                            </li>
+    
+                                            <li id="food-energy">
+                                                <p>1000KJ</p>
+                                            </li>
+                                            <li id="food-more">
+                                                <p>More…</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
+        <div class="bj"></div>
+        <div class="bx">
+           <div class="pop-text"> <span>Was the food you entered<br><span id="addfood">Red Apple</span></span></div>
+           <div class="pop-button">
+               <div class="pop-button1"><button>Yes</button></div>
+               <div class="pop-button2"><button>No,correct me</button></div>
+           </div>
+        </div>
     </div>
+
+
+
+    <script src="JavaScript/jquery-3.3.1.min.js"></script>
+
+    <script>
+    $(function () {
+            $("#food-img").click(function () {
+                    $(".bj").css({
+                        "display": "block"
+                    }).height($(window).height());
+                    $(".bx").css({
+                        "display": "block"
+                    })
+                }),
+                $(".bj").click(function () {
+                    $(".bj").css({
+                        "display": "none"
+                    });
+                    $(".bx").css({
+                        "display": "none"
+                    })
+                })
+        })</script>
 </body>
 
 </html>
