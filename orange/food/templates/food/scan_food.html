@@ -9,11 +9,12 @@
 
 <div id="status" class="text-muted"></div>
 
-<div id="file-container" style="display: none">
-    Upload an image: <input type="file" id="files" name="files[]" multiple />
+<div id="file-container" style="display: none;">
+    <label for="files" class="btn btn-primary btn-orange">Choose file:</label>
+    <input type="file" id="files" name="files[]" style="display: none;" multiple />
 </div>
 
-<div id="result"></div>
+<div id="result" style="font-weight: bold"></div>
 
 
 <script src="{% static 'classifier/tf.min.js' %}"></script>
@@ -161,6 +162,7 @@ function showResults(imgElement, classes) {
     const buttonElement = document.createElement('input');
     buttonElement.type = 'button';
     buttonElement.value = 'Yes! Add ' + classes[i].className + ' to my food diary';
+    buttonElement.setAttribute("class", "btn btn-primary btn-orange");
 
     probsContainer.appendChild(classElement);
     probsContainer.appendChild(buttonElement);
@@ -254,6 +256,7 @@ filesElement.addEventListener('change', evt => {
             img.src = e.target.result;
             img.width = IMAGE_SIZE;
             img.height = IMAGE_SIZE;
+            img.setAttribute("style", "display: block; margin-left: auto; margin-right: auto;");
             img.onload = () => predict(img);
 
         };

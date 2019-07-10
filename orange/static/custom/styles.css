@@ -60,6 +60,12 @@ body {
     margin-left: auto;
 }
 
+.btn-orange {
+    background-color: var(--main-color) !important;
+    cursor: hand;
+    width: 100%;
+}
+
 #backbtn {
     color: white;
     cursor: hand;
@@ -69,7 +75,15 @@ body {
     float: right;
     width: 200px;
 }
-
+/* 
+#files {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+} */
 .crop {
     width: 60px;
     white-space: nowrap;
