@@ -22,8 +22,8 @@
     {% for daily_intake_names, daily_intake_values, today_vitamins, percent, units in intakes %}
 
         <div>
-            <div style="float:left; width:35%; text-align: left; white-space: nowrap; overflow:hidden"><strong>{{ daily_intake_names }}</strong></div>
-            <div style="float:left; width:18%; text-align: right; white-space: nowrap; overflow:hidden"><small class="text-muted">{{ today_vitamins }}/{{ daily_intake_values }} {{ units }}</small></div>
+            <div style="float:left; width:30%; text-align: left; white-space: nowrap; overflow:hidden"><strong>{{ daily_intake_names }}</strong></div>
+            <div style="float:left; width:25%; text-align: right; white-space: nowrap; overflow:hidden"><small class="text-muted">{{ today_vitamins }}/{{ daily_intake_values }}{{ units }}</small></div>
             <div class="progress" style="float: left; width:43%; margin-left: 2%">
                 <div class="progress-bar {% if percent >= 110 %} bg-danger {% elif percent >= 90 %} bg-success {% endif %}" role="progressbar"
                         style="width:{{ percent }}%" aria-valuenow="{{ percent }}"
