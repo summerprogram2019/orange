@@ -5,9 +5,9 @@
 
 {% block content %}
 
-Classify a food
+<h1 class="display-2">Classify a food</h1>
 
-<div id="status"></div>
+<div id="status" class="text-muted"></div>
 
 <div id="file-container" style="display: none">
     Upload an image: <input type="file" id="files" name="files[]" multiple />
@@ -96,7 +96,7 @@ const TOPK_PREDICTIONS = 1000;
 
 let mobilenet;
 const mobilenetDemo = async () => {
-    status("loading");
+    status("Loading...");
 
     mobilenet = await tf.loadLayersModel(MOBILENET_MODEL_PATH);
 
@@ -106,7 +106,7 @@ const mobilenetDemo = async () => {
     mobilenet.predict(tf.zeros([1, IMAGE_SIZE, IMAGE_SIZE, 3])).dispose();
 
     document.getElementById('file-container').style.display = '';
-    status("loaded");
+    status("");
 
     console.log('Model loaded');
 
@@ -153,7 +153,7 @@ function showResults(imgElement, classes) {
 
     const classElement = document.createElement('div');
     classElement.className = 'cell';
-    classElement.innerText = 'Hi! Assuming this is a food that I know, I am '
+    classElement.innerText = 'I am '
             + (classes[i].probability.toFixed(3) / sum * 100).toFixed(1) +
             '% confident that this is a ' + classes[i].className +'. Is this correct?';
 

@@ -5,13 +5,13 @@
 {% if user.is_authenticated %}
 
     <div>
-        <h1 class="display-1" id="dashboard">Dashboard</h1>
+        <h1 class="display-2" id="dashboard">Dashboard</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum delectus provident unde voluptates aut consequatur dolorem rerum architecto, laboriosam voluptatum maxime, vitae eaque atque, tenetur voluptatibus reprehenderit ipsum qui expedita?</p>
     </div>
 
-    <h1 class="display-1" id="yourStatistics">Your Statistics</h1>
+    <h1 class="display-2" id="yourStatistics">Your Statistics</h1>
 
     {% comment %} {% if daily_intake_names %}
         Your Statistics
@@ -21,8 +21,8 @@
     {% for daily_intake_names, daily_intake_values, today_vitamins, percent in intakes %}
 
         <div>
-            <div style="float:left; width:25%; text-align: left"><strong>{{ daily_intake_names }}</strong></div>
-            <div style="float:left; width:25%; text-align: right"><small class="text-muted">{{ today_vitamins }}/{{ daily_intake_values }} g</small></div>
+            <div style="float:left; width:35%; text-align: left; white-space: nowrap; overflow:hidden"><strong>{{ daily_intake_names }}</strong></div>
+            <div style="float:left; width:15%; text-align: right"><small class="text-muted">{{ today_vitamins }}/{{ daily_intake_values }} g</small></div>
             <div class="progress" style="float: left; width:48%; margin-left: 2%">
                 <div class="progress-bar {% if percent >= 110 %} bg-danger {% elif percent >= 90 %} bg-success {% endif %}" role="progressbar"
                         style="width:{{ percent }}%" aria-valuenow="{{ percent }}"

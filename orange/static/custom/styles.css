@@ -70,8 +70,8 @@ body {
     width: 200px;
 }
 
-#user {
-    width: 200px;
+.crop {
+    width: 60px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -106,6 +106,10 @@ body {
     margin-bottom: 15px;
 }
 
+.bordered-text {
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
 .display-1 {
     font-weight: 900;
     font-size: 4em;
@@ -115,6 +119,12 @@ body {
 .display-2 {
     font-weight: 900;
     font-size: 2em;
+    letter-spacing: -0.02em;
+}
+
+.display-3 {
+    font-weight: 900;
+    font-size: 1.5em;
     letter-spacing: -0.02em;
 }
 
