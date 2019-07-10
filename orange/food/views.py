@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from food.models import Food
 from accounts.models import AteFood
 from datetime import datetime
+from food.api import get_nutrients
 
 # Create your views here.
 def scan_food(request):
@@ -48,3 +49,34 @@ def food_diary(request):
 def professionals(request):
 
     return render(request, 'food/professionals.html')
+
+def search_food(request, foodname):
+
+    print(foodname)
+
+    food_object = None
+
+    # first check if this food already exists
+    for x in Food.objects.all():
+        if x.name == foodname:
+            food_object = x
+            break
+
+    # food already exists
+    if food_object is not None:
+        return redirect(f'/food/view_food/{food_object.id}')
+
+    # food doesn't exist
+    nutrients = get_nutrients(foodname)
+    
+    if nutrients is None:
+        # TODO
+        print('bad')
+
+    else:
+        # TODO add to database
+
+        # validate units
+
+
+        print(nutrients)

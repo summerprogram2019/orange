@@ -11,6 +11,16 @@
     <img id="foodpicture" src="/static/img/{{ food.picture.url }}" width="150px"><br>
 {% endif %}
 
+{% if user.is_authenticated %}
+    <button id={{ food.id }} class='foodButton' type="submit"
+        onclick="if (confirm('Add {{ food.name }} to your food diary?')) {
+                window.location.replace('{% url "food:add_food" food.id %}');
+            }">
+        Add
+    </button>
+    <br>
+{% endif %}
+
 calcium: {{ food.nutrients.calcium }}<br>
 calories: {{ food.nutrients.calories }}<br>
 fat: {{ food.nutrients.fat }}<br>

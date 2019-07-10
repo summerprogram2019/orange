@@ -26,6 +26,10 @@ class Nutrition(models.Model):
     magnesium = models.DecimalField(max_digits=9, decimal_places=3, null=True) # mg
     folate = models.DecimalField(max_digits=9, decimal_places=3, null=True) # µg
     riboflavin = models.DecimalField(max_digits=9, decimal_places=3, null=True) # µg
+    vitamin_b5 = models.DecimalField(max_digits=9, decimal_places=3, null=True) # µg
+    potassium = models.DecimalField(max_digits=9, decimal_places=3, null=True) # mg
+    iron = models.DecimalField(max_digits=9, decimal_places=3, null=True) # mg
+    copper = models.DecimalField(max_digits=9, decimal_places=3, null=True) # µg
 
 
 class Food(models.Model):

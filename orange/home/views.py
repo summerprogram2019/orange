@@ -41,7 +41,8 @@ def index(request):
         today_vitamins = [str(round(x, 0)) for x in today_vitamins]
 
         args = {
-            'intakes' : zip(daily_intake_names, daily_intake_values, today_vitamins, percent)
+            'intakes' : sorted(zip(daily_intake_names,
+                    daily_intake_values, today_vitamins, percent))
         }
 
     else:

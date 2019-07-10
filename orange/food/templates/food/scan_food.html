@@ -161,7 +161,14 @@ function showResults(imgElement, classes) {
     // create buttons
     const buttonElement = document.createElement('input');
     buttonElement.type = 'button';
-    buttonElement.value = 'Yes! Add ' + classes[i].className + ' to my food diary';
+    // go to search food page
+    buttonElement.onclick = function () {
+        // ouch
+        window.location.replace(
+            '{% url 'food:search_food' 123 %}'.replace('123', classes[i].className));
+    }
+
+    buttonElement.value = 'Yes! Review nutrition information of ' + classes[i].className;
     buttonElement.setAttribute("class", "btn btn-primary btn-orange");
 
     probsContainer.appendChild(classElement);

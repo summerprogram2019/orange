@@ -33,6 +33,10 @@ class Command(BaseCommand):
             magnesium=350,
             folate=400,
             riboflavin=1600,
+            vitamin_b5=6000,
+            potassium=3500,
+            iron=15,
+            copper=2000,
         )
         average_nutrition.save()
 
@@ -61,6 +65,10 @@ class Command(BaseCommand):
             magnesium=350,
             folate=400,
             riboflavin=3000,
+            vitamin_b5=6000,
+            potassium=3500,
+            iron=15,
+            copper=2000,
         )
         cataracts_nutrition.save()
 
