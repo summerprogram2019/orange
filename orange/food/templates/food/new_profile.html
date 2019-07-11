@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" action="{% url 'food:new_profile' %}">
+    {{ form }}
+    {% csrf_token %}
+    <button type="submit" value="Set this nutrition as my new profile">
+        Set as my new profile
+    </button>
+</form> 
+
+{% endblock %}

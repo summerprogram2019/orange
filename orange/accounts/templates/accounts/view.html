@@ -10,8 +10,14 @@
 {% endif %}
 
 <form action="{% url 'accounts:edit' %}">
-    <button>
-        Edit
+    <button class="btn btn-primary btn-orange">
+        Edit Account Details
+    </button>
+</form>
+
+<form action="{% url 'food:new_profile' %}">
+    <button class="btn btn-primary btn-orange">
+        Edit Nutrition Profile
     </button>
 </form>
 

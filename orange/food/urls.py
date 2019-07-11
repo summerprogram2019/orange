@@ -12,4 +12,5 @@ urlpatterns = [
     path('food_diary', views.food_diary, name='food_diary'),
     path('food_error/<foodname>', views.food_error, name='food_error'),
     path('professionals', views.professionals, name='professionals'),
+    path('new_profile', views.new_profile, name='new_profile'),
 ]

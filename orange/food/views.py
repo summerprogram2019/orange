@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from food.models import Food, Nutrition
+from food.models import Food, Nutrition, Profile
 from accounts.models import AteFood
 from datetime import datetime
 from food.api import get_nutrients, lookup, reverse_lookup
 from decimal import *
+from food.forms import NutritionForm
 
 # Create your views here.
 def scan_food(request):
@@ -113,3 +114,40 @@ def search_food(request, foodname):
 
         # go to new page
         return redirect(f'/food/view_food/{food.id}')
+
+def new_profile(request):
+    current_user = request.user
+
+    if current_user.is_authenticated:
+
+        # if post, save user details
+        if request.method == 'POST':
+            form = NutritionForm(request.POST)
+            if form.is_valid():
+                result = form.save()
+
+                # create new profile
+                prof = Profile(name=current_user.username+"'s profile", daily_intake=result)
+                prof.save()
+
+                # set as our profile
+                current_user.profile=prof
+                current_user.save()
+
+            return redirect('/')
+        else:
+
+            # use current nutrients to fill form
+            current_nutrients = current_user.profile.daily_intake
+            current_nutrients.pk=None
+
+            form = NutritionForm(instance=current_nutrients)
+
+        args = {
+            'form': form
+        }
+
+        return render(request, 'food/new_profile.html', args)
+
+    else:
+        return redirect('/')

@@ -34,7 +34,10 @@ def index(request):
                     total_vitamin_today += i.food.nutrients.__getattribute__(vitamin)
 
             today_vitamins.append(total_vitamin_today)
-            percent.append(int(100*total_vitamin_today/daily_intake))
+            if daily_intake != 0:
+                percent.append(int(100*total_vitamin_today/daily_intake))
+            else:
+                percent.append(0)
 
         # convert units to strings
         units = ['{:~}'.format(lookup[reverse_lookup[x]][1]) for x in daily_intake_names]
