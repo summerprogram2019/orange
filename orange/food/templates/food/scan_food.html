@@ -20,7 +20,7 @@ OR Enter a food manually
 
 <input id="text_box">
 <button id="submit_button" type="submit"
-        onclick="if (confirm('Add \'' + text_box.value + '\' to your food diary?')) {
+        onclick="if (confirm('Review nutrition information of \'' + text_box.value + '\'?')) {
             window.location.replace('{% url 'food:search_food' 123 %}'.replace('123', text_box.value));
     }">
 Search
