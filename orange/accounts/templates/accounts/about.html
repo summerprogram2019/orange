@@ -2,9 +2,22 @@
 
 {% block content %}
 
+<div class="minitext">
 <h1 class="display-2">About Orange</h1>
+<p>Orange is all about making healthy eating even easier. These days everyone can see how much sugar and fat they're eating, but what about all of the important vitamins and minerals that your body needs?</p>
+<p>Orange provides all users with the ability to track the important nutritional information that often gets overlooked. After tracking your food intake, you can view your daily levels of every nutritional element ensuring that you can have a healthy balanced lifestyle.</p>
+<p>Orange makes tracking food even easier with the added food scanning feature. Using advanced machine learning algorithm, you can take a picture of your food and it will instantly be added to your daily intakes. What makes Orange even more special is it gives users the ability to customise their daily intakes to suit their own special requirements. If your lifestyle or medical background requires any dietary changes, you can easily configure your profile allowing you to see your new nutritional goals.</p>
+
+<strong>Orange has been designed so that no matter who you are, you can easily achieve a balanced nutrition.</strong>
+
+<img src="/static/img/default/logodesign.png" style="width: 200px; padding: 30px; display: block; margin-left: auto; margin-right: auto;">
 
 <h1 class="display-2">About TechPot</h1>
 <p>We put the passion in the pot.</p>
+
+{% if request.path != "/" %}
+<a id="backbtn" onclick="window.history.go(-1)" class="btn btn-light login-btn" style="color: black">Back</a>
+{% endif %}
+</div>
 
 {% endblock %}
