@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 style="font-size: 8em; text-align: center;">🤖😭</h1>
+
+<h1 class="display-2">Sorry, there was an error finding your food's data.</h1>
+<h1 class="display-3">Would you like to try again?</h1>
+
+<a href="{% url 'food:scan_food' %}" class="btn btn-primary btn-orange">Try again</a>
+
+{% endblock %}

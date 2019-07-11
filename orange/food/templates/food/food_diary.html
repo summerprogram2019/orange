@@ -17,7 +17,7 @@
         <thead>
             <tr>
                 <th></th>
-                <th>Name</th>
+                <th align="left">Name</th>
                 <th>Time</th>
                 <th>Calories (cal)</th>
                 <th></th>
@@ -27,15 +27,15 @@
         {% for food in today_atefood %}
 
             <tr>
-                <th>
+                <td>
                     {% if food.food.picture %}
                         <img src="/static/img/{{ food.food.picture.url }}" width="30px">
                     {% endif %}
-                </th>
-                <th>{{ food.food.name }}</th>
-                <th>{{ food.timestamp|localtime }}</th>
-                <th>{{ food.food.nutrients.calories }}</th>
-                <th><a href="/food/view_food/{{ food.food.id }}/">Details...</a></th>
+                </td>
+                <td>{{ food.food.name }}</td>
+                <td>{{ food.timestamp|localtime }}</td>
+                <td>{{ food.food.nutrients.calories }}</td>
+                <td><a href="/food/view_food/{{ food.food.id }}/">More...</a></td>
             </tr>
 
         {% endfor %}

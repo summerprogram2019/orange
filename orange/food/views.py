@@ -65,6 +65,10 @@ def professionals(request):
 
     return render(request, 'food/professionals.html')
 
+def food_error(request):
+
+    return render(request, 'food/food_error.html')
+
 def search_food(request, foodname):
 
     food_object = None
