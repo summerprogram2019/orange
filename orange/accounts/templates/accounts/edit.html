@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-
+{% load common_tags %}
 {% block content %}
 
 <form method="post" enctype="multipart/form-data" action="{% url 'accounts:edit' %}">
-    <div class="minitext">
+    {% comment %} <div class="minitext"> {% endcomment %}
         {% if form.errors %}
         <div class="alert alert-danger" role="alert">
         <small id="usernameHelp" class="form-text text-muted">{{ form.errors }}</small>
@@ -13,15 +13,15 @@
         <h1 class="display-2">Edit details</h1>
         <div class="form-group">
             <label>Weight</label>
-            {{ form.weight }}
+            {{ form.weight | addcss:"form-control" }}
         </div>
         <div class="form-group">
             <label>Height</label>
-            {{ form.height }}
+            {{ form.height | addcss:"form-control" }}
         </div>
         <div class="form-group">
             <label>Profile</label>
-            {{ form.profile }}
+            {{ form.profile | addcss:"form-control"  }}
         </div>
         <div class="form-group">
             <label>Picture</label>
@@ -30,11 +30,11 @@
 
         {% csrf_token %}
         <br>
-        <button type="submit" class="login-btn btn btn-primary" style="background-color: var(--main-color)">
+        <button type="submit" class="btn btn-primary btn-orange" style="background-color: var(--main-color)">
             Save
         </button>
 
-    </div>
+    {% comment %} </div> {% endcomment %}
 </form>
 
 {% endblock %}

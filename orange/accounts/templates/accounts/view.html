@@ -2,11 +2,13 @@
 
 {% block content %}
 
+<div style="float: left; display: block; width: 60%">
 <h1 class="display-2">{{ user.first_name }} {{ user.last_name }} 👤</h1>
 <h1 class="display-3">@{{ user.username }}</h1>
+</div>
 
 {% if user.picture %}
-    <img src="/static/img/{{ user.picture.url }}" width="200px">
+    <img src="/static/img/{{ user.picture.url }}" style="float: left; display: block; width: 40%; padding: 10px;">
 {% endif %}
 
 <form action="{% url 'accounts:edit' %}">

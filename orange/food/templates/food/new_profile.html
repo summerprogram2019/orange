@@ -1,12 +1,18 @@
 {% extends "base.html" %}
+{% load common_tags %}
 {% load static %}
 
 {% block content %}
 
 <form method="post" action="{% url 'food:new_profile' %}">
-    {{ form }}
+    {% for nutrition in form %}
+    <div class="form-group">
+    {{ nutrition.label }}
+    {{ nutrition | addcss:"form-control" }}
+    </div>
+    {% endfor %}
     {% csrf_token %}
-    <button type="submit" value="Set this nutrition as my new profile">
+    <button type="submit" class="btn btn-primary btn-orange" value="Set this nutrition as my new profile">
         Set as my new profile
     </button>
 </form> 
