@@ -16,6 +16,15 @@
 
 <div id="result" style="font-weight: bold"></div>
 
+OR Enter a food manually
+
+<input id="text_box">
+<button id="submit_button" type="submit"
+        onclick="if (confirm('Add \'' + text_box.value + '\' to your food diary?')) {
+            window.location.replace('{% url 'food:search_food' 123 %}'.replace('123', text_box.value));
+    }">
+Search
+</button>
 
 <script src="{% static 'classifier/tf.min.js' %}"></script>
 
@@ -32,8 +41,7 @@ const IMAGENET_CLASSES = {
   119: 'rock crab',
   120: 'fiddler crab',
   121: 'king crab',
-  122: 'American lobster',
-  123: 'rock lobster',
+  122: 'lobster',
   124: 'crayfish',
   125: 'hermit crab',
   311: 'grasshopper',
@@ -66,7 +74,7 @@ const IMAGENET_CLASSES = {
   945: 'bell pepper',
   946: 'cardoon',
   947: 'mushroom',
-  948: 'Granny Smith',
+  948: 'apple',
   949: 'strawberry',
   950: 'orange',
   951: 'lemon',
@@ -276,6 +284,9 @@ filesElement.addEventListener('change', evt => {
 const predictionsElement = document.getElementById('result');
 const statusElement = document.getElementById('status');
 const status = msg => statusElement.innerText = msg;
+
+// text box for searching
+const text_box = document.getElementById('text_box');
 
 mobilenetDemo();
 

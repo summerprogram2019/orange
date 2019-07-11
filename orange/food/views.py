@@ -65,9 +65,13 @@ def professionals(request):
 
     return render(request, 'food/professionals.html')
 
-def food_error(request):
+def food_error(request, foodname):
 
-    return render(request, 'food/food_error.html')
+    args = {
+        'foodname' : foodname
+    }
+
+    return render(request, 'food/food_error.html', args)
 
 def search_food(request, foodname):
 
@@ -88,8 +92,7 @@ def search_food(request, foodname):
     nutrients = get_nutrients(foodname)
     
     if nutrients is None:
-        # TODO
-        print('bad')
+        return redirect(f'/food/food_error/{foodname}')
 
     else:
         # convert the resulting units according to the lookup table
