@@ -21,6 +21,12 @@ def register(request):
 def manage(request):
     return render(request, 'accounts/manage.html')
 
+def about(request):
+    return render(request, 'accounts/about.html')
+
+def contact(request):
+    return render(request, 'accounts/contact.html')
+
 def view(request):
     current_user = request.user
 

@@ -71,6 +71,18 @@ Orange is all about making healthy eating even easier, providing users with the 
     </a>
 </div>
 
+<div class="d-flex justify-content-center">
+    <a href="{% url 'accounts:about'%}" class="btn btn-link login-btn">
+        About
+    </a>
+</div>
+
+<div class="d-flex justify-content-center">
+    <a href="{% url 'accounts:contact'%}" class="btn btn-link login-btn">
+        Contact us
+    </a>
+</div>
+
 {% endif %}
 
 <img class="fixed-bottom" id="startup" src="{% static "img/default/startup.png" %}">
