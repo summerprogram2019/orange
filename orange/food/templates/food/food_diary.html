@@ -4,22 +4,22 @@
 
 {% block content %}
 
-<h1 class="display-2">Food Diary</h1>
+<h1 class="display-2">Food Diary 🍎</h1>
 
-<br>
+{% comment %} 
+<br> {% endcomment %}
 
 {% if today_atefood %}
 
-    Today:
-    <br>
+    <h1 class="display-3">Today:</h1>
 
-    <table>
+    <table cellpadding="2">
         <thead>
             <tr>
                 <th></th>
-                <th align="left">Name</th>
+                <th>Name</th>
                 <th>Time</th>
-                <th>Calories (cal)</th>
+                <th>Cal.</th>
                 <th></th>
             </tr>
         </thead>
@@ -32,9 +32,9 @@
                         <img src="/static/img/{{ food.food.picture.url }}" width="30px">
                     {% endif %}
                 </td>
-                <td>{{ food.food.name }}</td>
-                <td>{{ food.timestamp|localtime }}</td>
-                <td>{{ food.food.nutrients.calories }}</td>
+                <td><small>{{ food.food.name }}</small></td>
+                <td><small>{{ food.timestamp|localtime }}</small></td>
+                <td><small>{{ food.food.nutrients.calories|floatformat:0 }}</small></td>
                 <td><a href="/food/view_food/{{ food.food.id }}/">More...</a></td>
             </tr>
 
@@ -45,14 +45,14 @@
 
 {% if yesterday_atefood %}
 
-    Later:
-    <table>
+    <h1 class="display-3">Earlier:</h1>
+    <table cellpadding="2">
         <thead>
             <tr>
                 <th></th>
                 <th>Name</th>
                 <th>Time</th>
-                <th>Calories (cal)</th>
+                <th>Cal.</th>
                 <th></th>
             </tr>
         </thead>
@@ -60,15 +60,15 @@
         {% for food in yesterday_atefood %}
 
             <tr>
-                <th>
+                <td>
                     {% if food.food.picture %}
                         <img src="/static/img/{{ food.food.picture.url }}" width="30px">
                     {% endif %}
-                </th>
-                <th>{{ food.food.name }}</th>
-                <th>{{ food.timestamp|localtime }}</th>
-                <th>{{ food.food.nutrients.calories }}</th>
-                <th><a href="/food/view_food/{{ food.food.id }}/">Details...</a></th>
+                </td>
+                <td><small>{{ food.food.name }}</small></td>
+                <td><small>{{ food.timestamp|localtime }}</small></td>
+                <td><small>{{ food.food.nutrients.calories|floatformat:0 }}</small></td>
+                <td><a href="/food/view_food/{{ food.food.id }}/">More...</a></td>
             </tr>
 
         {% endfor %}
