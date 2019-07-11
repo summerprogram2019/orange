@@ -8,4 +8,11 @@
 {% if user.picture %}
     <img src="/static/img/{{ user.picture.url }}" width="200px">
 {% endif %}
+
+<form action="{% url 'accounts:edit' %}">
+    <button>
+        Edit
+    </button>
+</form>
+
 {% endblock %}

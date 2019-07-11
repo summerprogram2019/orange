@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from accounts.forms import SignUpForm
+from accounts.forms import SignUpForm, UserInfoForm
 
 # Create your views here.
 
@@ -35,4 +35,26 @@ def view(request):
     
     else:
         return redirect('/')
-        
+
+def edit(request):
+    current_user = request.user
+
+    if current_user.is_authenticated:
+
+        # if post, save user details
+        if request.method == 'POST':
+            user_info_form = UserInfoForm(request.POST, request.FILES, instance=current_user)
+            if user_info_form.is_valid():
+                user_info_form.save()
+            return redirect('/accounts/view')
+        else:
+            user_info_form = UserInfoForm(instance=current_user)
+
+        args = {
+            'form': user_info_form
+        }
+
+        return render(request, 'accounts/edit.html', args)
+    
+    else:
+        return redirect('/')
