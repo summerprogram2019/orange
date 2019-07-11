@@ -2,4 +2,51 @@
 
 {% block content %}
 
+<div class="minitext">
+<h2 class="display-2">Hit us up!</h2>
+<img src="/static/img/default/dnui.png" style="width:100%; padding-top: 10px; padding-bottom: 10px;">
+<strong>Email:</strong> tech@pot.com
+<br>
+<strong>Phone:</strong> +86 8888 8868 668
+<br>
+<strong>Address:</strong> 8 Software Park Rd, Dalian, P.R. China
+<br>
+<strong>Office hours:</strong>
+<table style="width:100%">
+<tr>
+<td>Monday</td>
+<td>2am - 11pm</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>2am - 11pm</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>2am - 11pm</td>
+</tr>
+<tr>
+<td>Thursday</td>
+<td>2am - 11pm</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>2am - 11pm</td>
+</tr>
+<tr>
+<td>Saturday</td>
+<td>2am - 11pm</td>
+</tr>
+<tr>
+<td>Sunday</td>
+<td>2am - 11pm</td>
+</tr>
+</table>
+<br>
+{% if request.path != "/" %}
+<a id="backbtn" onclick="window.history.go(-1)" class="btn btn-light login-btn" style="color: black">Back</a>
+{% endif %}
+
+</div>
+
 {% endblock %}
