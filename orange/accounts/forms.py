@@ -17,3 +17,16 @@ class SignUpForm(UserCreationForm):
             'profile',
             'picture',
         )
+
+# Form to edit details
+class UserInfoForm(forms.ModelForm):
+
+    class Meta:
+        model = get_user_model()
+        fields = (
+            'weight',
+            'height',
+            'profile',
+            'picture',
+        )
+        exclude = ('password1', 'password2',)
