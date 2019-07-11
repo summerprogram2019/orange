@@ -13,7 +13,7 @@
             <p>{{ intakes.1.2 }}/{{ intakes.1.1 }}{{ intakes.1.4 }}</p>
         </div>
         <div style="text-align: right; float: left; width: 55%">
-            <h1 class="display-1" >{{ intakes.1.3 }}%</h1>
+            <h1 class="display-1 {% if intakes.1.3 >= 110 %} text-danger {% elif intakes.1.3 >= 90 %} text-success {% endif %}">{{ intakes.1.3 }}%</h1>
         </div>        
     </div>
 

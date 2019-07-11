@@ -5,9 +5,9 @@
 
 {% block content %}
 
-<h1 class="display-2">Classify a food</h1>
+<h1 class="display-2">Scan food 🔎</h1>
 
-<div id="status" class="text-muted"></div>
+<div id="status" class="text-muted" style="font-size: 0.8em;"></div>
 
 <div id="file-container" style="display: none;">
     <label for="files" class="btn btn-primary btn-orange">Choose an image</label>
@@ -16,10 +16,10 @@
 
 <div id="result" style="font-weight: bold"></div>
 
-OR Enter a food manually
+<h1 class="display-3">Enter a food manually</h1>
 
-<input id="text_box">
-<button id="submit_button" type="submit"
+<input id="text_box"  class="form-control" style="width: 70%; float: left;">
+<button id="submit_button" type="submit" class="btn btn-primary btn-orange" style="width: 30%; float: left;"
         onclick="if (confirm('Review nutrition information of \'' + text_box.value + '\'?')) {
             window.location.replace('{% url 'food:search_food' 123 %}'.replace('123', text_box.value));
     }">
@@ -105,7 +105,7 @@ const TOPK_PREDICTIONS = 1000;
 
 let mobilenet;
 const mobilenetDemo = async () => {
-    status("Loading...");
+    status("Loading scanner...");
 
     mobilenet = await tf.loadLayersModel(MOBILENET_MODEL_PATH);
 

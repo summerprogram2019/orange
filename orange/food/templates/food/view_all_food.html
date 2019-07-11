@@ -3,14 +3,14 @@
 
 {% block content %}
 
-<h1 class="display-2">View all foods</h1>
+<h1 class="display-2">View all foods 🍲</h1>
 
-<table>
+<table cellpadding="3" style="width: 100%">
     <thead>
         <tr>
             <th></th>
             <th>Name</th>
-            <th>Calories (cal)</th>
+            <th>Cal.</th>
 
             <!-- Only give the option of adding a food if they are logged in -->
             {% if user.is_authenticated %}
@@ -24,23 +24,23 @@
     {% for food in foods %}
 
         <tr>
-            <th>
+            <td>
                 {% if food.picture %}
                     <img src="/static/img/{{ food.picture.url }}" width="30px">
                 {% endif %}
-            </th>
-            <th>{{ food.name }}</th>
-            <th>{{ food.nutrients.calories }}</th>
-            <th><a href="/food/view_food/{{ food.id }}/">More...</a></th>
+            </td>
+            <td>{{ food.name }}</td>
+            <td>{{ food.nutrients.calories|floatformat:0 }}</td>
+            <td><a href="/food/view_food/{{ food.id }}/">More...</a></td>
             {% if user.is_authenticated %}
-                <th>
-                    <button id={{ food.id }} class='foodButton' type="submit"
+                <td>
+                    <button id={{ food.id }} class="btn btn-primary btn-orange" type="submit"
                         onclick="if (confirm('Add {{ food.name }} to your food diary?')) {
                                 window.location.replace('{% url "food:add_food" food.id %}');
                             }">
-                        Add
+                        +
                     </button>
-                </th>
+                </td>
             {% endif %}
         </tr>
 
