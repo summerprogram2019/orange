@@ -6,11 +6,12 @@
 
 <h1 class="display-2">Edit nutrition profile</h1>
 <form method="post" action="{% url 'food:new_profile' %}">
-    {% for nutrition in form %}
-    <div class="form-group">
-    {{ nutrition.label }}
-    {{ nutrition | addcss:"form-control" }}
-    </div>
+    {% for nutrition, units in form %}
+        <div class="form-group">
+            {{ nutrition.label }}
+            ({{ units }})
+            {{ nutrition | addcss:"form-control" }}
+        </div>
     {% endfor %}
     {% csrf_token %}
     <button type="submit" class="btn btn-primary btn-orange" value="Set this nutrition as my new profile">

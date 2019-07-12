@@ -5,6 +5,7 @@ from datetime import datetime
 from food.api import get_nutrients, lookup, reverse_lookup
 from decimal import *
 from food.forms import NutritionForm
+from food.api import lookup, reverse_lookup
 
 # Create your views here.
 def scan_food(request):
@@ -120,6 +121,12 @@ def new_profile(request):
 
     if current_user.is_authenticated:
 
+        # get name of all units
+        daily_intake_names = [x.name for x in current_user.profile.daily_intake._meta.fields
+                if x.name != 'id']
+
+        units = ['{:~}'.format(lookup[reverse_lookup[x]][1]) for x in daily_intake_names]
+
         # if post, save user details
         if request.method == 'POST':
             form = NutritionForm(request.POST)
@@ -144,7 +151,7 @@ def new_profile(request):
             form = NutritionForm(instance=current_nutrients)
 
         args = {
-            'form': form
+            'form': zip(form, units)
         }
 
         return render(request, 'food/new_profile.html', args)
