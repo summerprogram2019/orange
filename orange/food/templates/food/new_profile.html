@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<h1 class="display-2">Edit nutrition profile</h1>
 <form method="post" action="{% url 'food:new_profile' %}">
     {% for nutrition in form %}
     <div class="form-group">
