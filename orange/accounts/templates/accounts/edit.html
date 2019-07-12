@@ -3,38 +3,36 @@
 {% block content %}
 
 <form method="post" enctype="multipart/form-data" action="{% url 'accounts:edit' %}">
-    {% comment %} <div class="minitext"> {% endcomment %}
-        {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-        <small id="usernameHelp" class="form-text text-muted">{{ form.errors }}</small>
-        </div>
-        
-        {% endif %}
-        <h1 class="display-2">Edit details</h1>
-        <div class="form-group">
-            <label>Weight</label>
-            {{ form.weight | addcss:"form-control" }}
-        </div>
-        <div class="form-group">
-            <label>Height</label>
-            {{ form.height | addcss:"form-control" }}
-        </div>
-        <div class="form-group">
-            <label>Profile</label>
-            {{ form.profile | addcss:"form-control"  }}
-        </div>
-        <div class="form-group">
-            <label>Picture</label>
-            {{ form.picture }}
-        </div>
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+    <small id="usernameHelp" class="form-text text-muted">{{ form.errors }}</small>
+    </div>
+    
+    {% endif %}
+    <h1 class="display-2">Edit details</h1>
+    <div class="form-group">
+        <label>Weight</label>
+        {{ form.weight | addcss:"form-control" }}
+    </div>
+    <div class="form-group">
+        <label>Height</label>
+        {{ form.height | addcss:"form-control" }}
+    </div>
+    <div class="form-group">
+        <label>Profile</label>
+        {{ form.profile | addcss:"form-control"  }}
+    </div>
+    <div class="form-group">
+        <label>Picture</label>
+        {{ form.picture }}
+    </div>
 
-        {% csrf_token %}
-        <br>
-        <button type="submit" class="btn btn-primary btn-orange" style="background-color: var(--main-color)">
-            Save
-        </button>
+    {% csrf_token %}
+    <br>
+    <button type="submit" class="btn btn-primary btn-orange" style="background-color: var(--main-color)">
+        Save
+    </button>
 
-    {% comment %} </div> {% endcomment %}
 </form>
 
 {% endblock %}

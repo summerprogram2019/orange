@@ -19,11 +19,6 @@
 
     <h1 class="display-2" id="yourStatistics">Your Statistics 📊</h1>
 
-    {% comment %} {% if daily_intake_names %}
-        Your Statistics
-        <br>
-    {% endif %} {% endcomment %}
-
     {% for daily_intake_names, daily_intake_values, today_vitamins, percent, units in intakes %}
 
         <div>
@@ -35,9 +30,6 @@
                         aria-valuemin="0" aria-valuemax="100">{{ percent }}%</div>
             </div>
         </div>
-        {% comment %} {{ daily_intake_values }}
-        {{ today_vitamins }}
-        {{ percent }} {% endcomment %}
         <br>
 
     {% endfor %}
@@ -45,12 +37,6 @@
 {% else %}
 
 {% endif %}
-
-{% comment %} 
-{% if user.is_authenticated %}
-    <a href="{% url 'food:view_all_food' %}">View All Foods</a>
-    <a href="{% url 'food:food_diary' %}">My Food Diary</a>
-{% endif %} {% endcomment %}
 
 
 {% endblock %}
